@@ -1,0 +1,27 @@
+//reset
+@import "./reset/typography";
+@import "./reset/vars";
+@import "./reset/mixin";
+@import "./reset/reset";
+/* 
+@import "./reset/animations";
+ */
+//css grid
+@import "./reset/layout"; 
+
+//estructura
+@import "navbar";
+@import "searchbar";
+@import "videodetail";
+/* 
+@import "itemlistcontainer";
+@import "itemcount";
+@import "itemdetail";
+@import "cart";
+@import "formulario";
+@import "footer";
+@import "checkout"; */
+
+//MEDIA QUERIES
+/* @import "mq_tablet";
+@import "mq_movil"; */ 

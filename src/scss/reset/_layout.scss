@@ -1,0 +1,23 @@
+#root {
+  background-color: $color-oldpaper;
+}
+
+.container {
+  font-size: 18px;
+  font-family: $project-font;
+  color: $color-globaltext;
+  height: 100vh;
+ /*  max-width: 1440px; */
+  /* width: 100%; */
+  margin: auto;
+  background-color: #aeaeae; 
+  overflow: hidden;
+  display: grid;
+  grid-template-columns:200px 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr 1fr 250px;
+  grid-template-areas:
+    "menu searchbar searchbar searchbar"
+    "menu videodetail videodetail videodetail"
+    "menu videodetail videodetail videodetail"
+    "menu videolist videolist videolist";
+}

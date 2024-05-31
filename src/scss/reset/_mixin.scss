@@ -1,0 +1,20 @@
+@mixin boxBorder($marg, $padd) {
+  margin: $marg;
+  padding: $padd;
+}
+
+@mixin sizes($ancho, $alto) {
+  height: $ancho;
+  width: $alto;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin d-flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
