@@ -1,0 +1,6 @@
+.videolist {
+    grid-area: videolist;
+    border: 5px solid orange;
+    @include d-flex(center,center);
+
+}
