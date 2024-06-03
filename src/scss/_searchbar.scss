@@ -1,15 +1,19 @@
 .searchbar {
     grid-area: searchbar;
-    display: flex;
+   display: flex;
     @include flex-center;
-
+    background-color: #0f0f0f;
+    margin:1rem;
     .search {
         width: 500px;
         height: 40px;
-        margin: 150px auto;
-        background: #444;
-        background: rgba(0, 0, 0, .2);
-        border-radius: 3px;
+        margin: 0 auto;
+        background-color: #0f0f0f;
+      /*   background: #444;
+
+        background: rgba(0, 0, 0, .2); */
+/*         background-color: #0f0f0f; */
+        border-radius: 15px;
         border: 1px solid #fff;
 
         input {
@@ -22,8 +26,10 @@
             border-radius: 3px 0 0 3px;
 
             &:focus {
-                outline: 0;
+             /*    outline: 0; */
                 background: transparent;
+                border:1px solid #5656ef;
+                border-radius: 3px 0 0 3px;
             }
         }
 
@@ -54,7 +60,4 @@
             }
         }
     }
-
-
-
 }

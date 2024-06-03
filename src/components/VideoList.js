@@ -3,16 +3,17 @@ import VideoItem from "./VideoItem";
 
 const VideoList = () => {
   const { dataYoutube } = useUserContext();
+
   return (
     <div className="videolist">
-
-    {dataYoutube &&
-      dataYoutube.map((item,key)=>{
-        return <div key={item.id.videoId}><VideoItem video={item}/></div>
-      })
-      }
-      
-      <VideoItem />
+      {dataYoutube &&
+        dataYoutube.map((item, i) => {
+          return (
+            <div className="videoitem" key={i}>
+              <VideoItem video={item} />
+            </div>
+          );
+        })}
     </div>
   );
 };

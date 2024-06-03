@@ -1,14 +1,28 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 const VideoItem = ({ video }) => {
-
   return (
-    <div>
-   {video && <img src={video.snippet.thumbnails.default.url} alt="youtubethumbs"/>} 
-     {video&&<p>{video.snippet.title}</p>} 
-     {video&&<p>{video.snippet.channelTitle}</p>} 
-
-    </div>
+    <Fragment>
+      {video && (
+        <Link
+          to={`/react-youtube/${video.id.videoId}`}
+          state={{ state: { video } }}>
+          {video && (
+            <div className="videoitem--container">    {/*    //OKO MAQUETACION */}
+              <img
+                src={video.snippet.thumbnails.high.url}
+                className="videoitem--thumbs"
+                alt="youtubethumbs"
+              />
+              <p className="videoitem--title">{video.snippet.title}</p>
+              <p className="videoitem--channeltitle">
+                {video.snippet.channelTitle}
+              </p>
+            </div>
+          )}
+        </Link>
+      )}
+    </Fragment>
   );
 };
 
