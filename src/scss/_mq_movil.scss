@@ -1,3 +1,26 @@
 @media only screen and (max-width: 500px) {
-    
+    .container {
+        grid-template-columns: 180px 1fr 1fr;
+        grid-template-rows: 75px 80% 15%;
+        grid-template-areas:
+            " menu searchbar searchbar"
+            " videodetail videodetail videodetail"
+            " videolist videolist videolist";
+            overflow-y: scroll;
+            overflow-x: hidden;
+    }
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-around;
+        &--button{
+            width: auto;
+  
+        }
+    }
+    .searchbar {
+        margin: 0px 0.5rem 0px 0.5rem;
+        width:90%;
+       
+    }
 }

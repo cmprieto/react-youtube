@@ -4,10 +4,9 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <Link to="/react-youtube">
-        
         <img src={logo} className="navbar--logo" alt="logo" />
       </Link>
-      <Link to="/react-youtube"><button className='navbar--button'>Home</button></Link>
+      <NavLink to="/react-youtube"><button className='navbar--button'><p>Home</p></button></NavLink>
     </div>
   );
 };

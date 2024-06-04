@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 
 const Result = ({ videotoShow }) => {
-  /*   console.log("firstResult", videotoShow); */
   const VIDEO_ID = videotoShow.id.videoId;
   console.log( VIDEO_ID);
   return (
@@ -12,6 +11,7 @@ const Result = ({ videotoShow }) => {
         className="videodetail--videocontainer--iframe"
         allowFullScreen
         src={`https://www.youtube.com/embed/${VIDEO_ID}`}
+        frameborder="0"
       ></iframe>
       <div className="videodetail--videocontainer--text">
         <h1>{videotoShow.snippet.title}</h1>

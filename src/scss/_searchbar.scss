@@ -1,63 +1,46 @@
 .searchbar {
     grid-area: searchbar;
-   display: flex;
+    margin: 0.8rem auto;
     @include flex-center;
-    background-color: #0f0f0f;
-    margin:1rem;
-    .search {
-        width: 500px;
-        height: 40px;
-        margin: 0 auto;
-        background-color: #0f0f0f;
-      /*   background: #444;
+    max-width: 536px;
+    width: 50%;
 
-        background: rgba(0, 0, 0, .2); */
-/*         background-color: #0f0f0f; */
-        border-radius: 15px;
-        border: 1px solid #fff;
 
-        input {
-            width: 370px;
-            padding: 10px 5px;
-            float: left;
-            color: #ccc;
-            border: 0;
-            background: transparent;
-            border-radius: 3px 0 0 3px;
+}
 
-            &:focus {
-             /*    outline: 0; */
-                background: transparent;
-                border:1px solid #5656ef;
-                border-radius: 3px 0 0 3px;
-            }
-        }
+.searchTerm {
+    width: 100%;
+    border: 3px solid $color-dark-grey;
+    border-right: none;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background: $color-background;
+/*     color: #9DBFAF; */
+}
 
-        button {
-            position: relative;
-            float: right;
-            border: 0;
-            padding: 0;
-            cursor: pointer;
-            height: 40px;
-            width: 120px;
-            color: #fff;
-            background: transparent;
-            border-left: 1px solid #fff;
-            border-radius: 0 3px 3px 0;
+.searchTerm:focus {
+    color: white;
+    border: 2px solid $color-blue;
+}
 
-            &:hover {
-                background: #fff;
-                color: #444;
-            }
-
-            &:active {
-                box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
-            }
-
-            &:focus {
-                outline: 0;
-            }
-        }
+.searchButton {
+    width: 40px;
+    height: 40px;
+    border: 1px solid $color-dark-grey;
+    background: $color-dark-grey;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size:1rem;
+    @include flex-center;
+    &--lupa {
+        width: 1rem;
+    }
+    &:focus {
+        color: $color-blue;
+        border: 2px solid $color-blue;
     }
 }
