@@ -1,7 +1,8 @@
 @media only screen and (max-width: 500px) {
     .container {
+        min-height: 100vh;
         grid-template-columns: 180px 1fr 1fr;
-        grid-template-rows: 75px 80% 15%;
+        grid-template-rows: 75px 80% 1800px;
         grid-template-areas:
             " menu searchbar searchbar"
             " videodetail videodetail videodetail"
@@ -9,6 +10,7 @@
             overflow-y: scroll;
             overflow-x: hidden;
     }
+
 
     .navbar {
         flex-direction: row;
@@ -20,7 +22,18 @@
     }
     .searchbar {
         margin: 0px 0.5rem 0px 0.5rem;
-        width:90%;
+        width:90% !important;
        
+    }
+    .videodetail {
+        &--videocontainer {
+            width: 100%;
+        }
+    }
+    .videolist{
+        flex-direction: column;
+    }
+    .videoitem{
+        max-width: 80%;
     }
 }

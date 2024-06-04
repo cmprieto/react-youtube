@@ -33,7 +33,7 @@
     &--title {
         color: #f1f1f1;
         height: 15%;
-        font-size: 0.9vw;
+        font-size: 0.9rem;
         width: 90%;
         font-weight: 500;
         overflow: hidden;
@@ -43,12 +43,12 @@
     }
 
     &--channeltitle {
-        font-size: 0.7vw;
+        font-size: 0.7rem;
         height: 15%;
         line-height: 2rem;
         font-weight: 500;
         max-height: 4rem;
-        text-overflow: ellipsis;
+       /*  text-overflow: ellipsis; */
         overflow: hidden;
         white-space: nowrap;
         color: #AAAAAA;
