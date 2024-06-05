@@ -4,7 +4,9 @@
     @include flex-center;
     max-width: 536px;
     width: 50%;
-
+    &--form{
+        @include flex-center;
+    }   flex-direction: row;
 
 }
 

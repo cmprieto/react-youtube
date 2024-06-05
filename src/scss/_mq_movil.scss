@@ -2,7 +2,7 @@
     .container {
         min-height: 100vh;
         grid-template-columns: 180px 1fr 1fr;
-        grid-template-rows: 75px 80% 1800px;
+        grid-template-rows: 75px 80% 1200px;
         grid-template-areas:
             " menu searchbar searchbar"
             " videodetail videodetail videodetail"
@@ -28,6 +28,16 @@
     .videodetail {
         &--videocontainer {
             width: 100%;
+            &--text{
+                width: 100%;
+                &>h1 {
+                    font-size: 0.9rem;
+                    line-height: 1.5rem;
+                }
+                &>p{
+                    font-size: 0.8rem;
+                }
+            }
         }
     }
     .videolist{
