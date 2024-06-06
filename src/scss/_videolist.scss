@@ -1,5 +1,5 @@
 .videolist {
-    grid-area: videolist;
+   grid-area: videolist; 
     @include d-flex(space-around, center);
     background-color: #0f0f0f; 
     overflow: hidden;

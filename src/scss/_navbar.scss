@@ -1,41 +1,53 @@
-.navbar{
+.navbar {
     grid-area: menu;
     height: 100%;
     background-color: #0f0f0f;
-    @include d-flex(flex-start,center);
+    @include d-flex(flex-start, center);
     flex-direction: column;
-    &--logo{
+    /* margin: 1rem; */
+
+    &--logo {
         width: 90px;
         height: auto;
-        margin:0.5rem;
+        margin: 0.5rem;
     }
-    &--button{
-        width: 180px;
-        padding: 0.5rem;
-        border-radius: 10px;
-        border:0px;
-        background-color: transparent;
-        color:#f1f1f1;
-        padding: 0 12px;
-        height: 2.5rem;
-        &:hover{
-            background-color: #5346464f;
-        }
-        &:active{
-            background-color: whitesmoke;
-            /* background: #534646; */
-            opacity: 0.3;
-            color:white;
-        }
-        &>p{
-            font-family: $project-font;
-            font-weight: 700;
+
+    &--menu {
+       @include d-flex(space-around, center);
+       flex-direction: column;
+       height: 20vh;
+
+        &--button {
+            width: 180px;
+            padding: 0.5rem;
+            border-radius: 10px;
+            border: 0px;
+            background-color: transparent;
+            color: #f1f1f1;
+            padding: 0 12px;
+            height: 2.5rem;
+
+            &:hover {
+                background-color: #5346464f;
+            }
+
+            &:active {
+                background-color: whitesmoke;
+                /* background: #534646; */
+                opacity: 0.3;
+                color: white;
+            }
+
+            &>p {
+                font-family: $project-font;
+                font-weight: 700;
+            }
         }
     }
-    
+
 }
 
-.active{
+.active {
     background-color: $color-dark-grey;
     border-radius: 15px;
 }

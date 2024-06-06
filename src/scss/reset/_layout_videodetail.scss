@@ -1,0 +1,6 @@
+.container--videodetail {
+    grid-area: main;
+    overflow: hidden;
+    @include flex-center;
+    flex-wrap: wrap;
+}

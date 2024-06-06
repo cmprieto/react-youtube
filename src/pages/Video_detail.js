@@ -2,16 +2,15 @@ import { Fragment } from "react";
 import VideoList from "../components/VideoList";
 import VideoDetail from "../components/VideoDetail";
 
-const Home = () => {
+const Video_detail = () => {
   return (
     <Fragment>
-      <div className="container--home">
-        {/*       <VideoDetail /> */}
-        <VideoList /> 
+      <div className="container--videodetail">
+        <VideoDetail />
         <VideoList />
       </div>
     </Fragment>
   );
 };
 
-export default Home;
+export default Video_detail;

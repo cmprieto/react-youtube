@@ -5,7 +5,7 @@ const VideoItem = ({ video }) => {
     <Fragment>
       {video && (
         <Link
-          to={`/react-youtube/${video.id.videoId}`}
+          to={`/react-youtube/videodetail/${video.id.videoId}`}
           state={{ state: { video } }}>
           {video && (
             <div className="videoitem--container">    {/*    //OKO MAQUETACION */}

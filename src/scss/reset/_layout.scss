@@ -2,7 +2,7 @@
   font-size: 18px;
   font-family: $project-font;
   color: $color-titletext;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
   background-color: $color-background;
   overflow: hidden;
@@ -11,6 +11,6 @@
   grid-template-rows: 0.1fr 2fr 1fr;
   grid-template-areas:
     "menu searchbar searchbar searchbar"
-    "menu videodetail videodetail videodetail"
-    "menu videolist videolist videolist";
+    "menu main main main"
+    "menu main main main";
 }
