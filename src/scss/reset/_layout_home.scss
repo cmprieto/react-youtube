@@ -1,7 +1,6 @@
 .container--home {
-  grid-area: main;
+    grid-area: main;
     overflow: hidden;
     @include flex-center;
     flex-wrap: wrap;
-  }
-  
+}
