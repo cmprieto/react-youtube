@@ -3,23 +3,47 @@
         grid-template-columns: 250px 1fr 1fr;
         grid-template-rows: 50px 70% auto;
         grid-template-areas:
-            " menu searchbar searchbar"
-            " videodetail videodetail videodetail"
-            " videolist videolist videolist";
-       /*  overflow-y: scroll;
+            " menu menu searchbar"
+            " main main main"
+            " main main main";
+        /*  overflow-y: scroll;
         overflow-x: hidden; */
+    }
+
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-around;
+
+        &--menu {
+            @include d-flex(space-around, center);
+            flex-direction: row;
+
+            &--button {
+                width: auto;
+
+            }
+        }
+    }
+
+    .searchbar {
+        width: 90%;
+
     }
 
     .videodetail {
         &--videocontainer {
             width: 100%;
-            &--text{
+
+            &--text {
                 width: 100%;
-                &>h1{
+
+                &>h1 {
                     font-size: 1rem;
                     line-height: 1.5rem;
                 }
-                &>p{
+
+                &>p {
                     font-size: 0.8rem;
                 }
             }
@@ -36,22 +60,6 @@
             font-size: 0.6rem;
         }
     }
-
-    .navbar {
-        flex-direction: row;
-        justify-content: space-around;
-
-        &--button {
-            width: auto;
-
-        }
-    }
-
-    .searchbar {
-        width: 95%;
-
-    }
-
 
 
 }

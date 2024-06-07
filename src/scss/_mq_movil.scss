@@ -2,48 +2,60 @@
     .container {
         min-height: 100vh;
         grid-template-columns: 180px 1fr 1fr;
-        grid-template-rows: 75px 80% 1200px;
+        grid-template-rows: 75px 75px 80% 1200px;
         grid-template-areas:
-            " menu searchbar searchbar"
-            " videodetail videodetail videodetail"
-            " videolist videolist videolist";
-            overflow-y: scroll;
-            overflow-x: hidden;
+            " menu menu menu"
+             "searchbar searchbar searchbar"
+            " main main main"
+            " main main main";
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
-
 
     .navbar {
         flex-direction: row;
         justify-content: space-around;
-        &--button{
-            width: auto;
-  
+
+        &--menu {
+            @include d-flex(space-around, center);
+            flex-direction: row;
+            &--button {
+                width: auto;
+
+            }
         }
     }
+
     .searchbar {
         margin: 0px 0.5rem 0px 0.5rem;
-        width:90% !important;
-       
+        width: 90% !important;
+
     }
+
     .videodetail {
         &--videocontainer {
             width: 100%;
-            &--text{
+
+            &--text {
                 width: 100%;
+
                 &>h1 {
                     font-size: 0.9rem;
                     line-height: 1.5rem;
                 }
-                &>p{
+
+                &>p {
                     font-size: 0.8rem;
                 }
             }
         }
     }
-    .videolist{
+
+    .videolist {
         flex-direction: column;
     }
-    .videoitem{
+
+    .videoitem {
         max-width: 80%;
     }
 }

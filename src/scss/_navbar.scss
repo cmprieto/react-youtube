@@ -15,7 +15,7 @@
     &--menu {
        @include d-flex(space-around, center);
        flex-direction: column;
-       height: 20vh;
+       height: 40%;
 
         &--button {
             width: 180px;
