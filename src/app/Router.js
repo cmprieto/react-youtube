@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Video_detail from "../pages/Video_detail";
 import Layout from "../components/Layout";
-import VideoDetail from "../components/VideoDetail";
+
 /* import Page2 from '../pages/Page2'; */
 
 const Router = () => (

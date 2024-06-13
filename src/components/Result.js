@@ -1,8 +1,8 @@
 import { Fragment } from "react";
-
+import fav from "../assets/icon/fav.png";
 const Result = ({ videotoShow }) => {
   const VIDEO_ID = videotoShow.id.videoId;
-  console.log( VIDEO_ID);
+  console.log(VIDEO_ID);
   return (
     <Fragment>
       <iframe
@@ -13,9 +13,12 @@ const Result = ({ videotoShow }) => {
         src={`https://www.youtube.com/embed/${VIDEO_ID}`}
         frameborder="0"
       ></iframe>
-      <div className="videodetail--videocontainer--text">
-        <h1>{videotoShow.snippet.title}</h1>
-        <p>{videotoShow.snippet.description}</p>
+      <div className="videodetail--videocontainer--subframe">
+        <div className="videodetail--videocontainer--subframe--texto">
+          <h1>{videotoShow.snippet.title}</h1>
+          <p>{videotoShow.snippet.description}</p>
+        </div>
+        <img src={fav} alt="favorito"></img>
       </div>
     </Fragment>
   );

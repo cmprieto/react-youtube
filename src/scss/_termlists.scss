@@ -1,0 +1,14 @@
+.termContainer{
+    border: 1px solid orange;
+    @include d-flex(space-around,center);
+    flex-direction: row;
+    flex-wrap: wrap;
+    &--img{
+        border-radius: 100px;
+        width: 50px;
+    }
+    &--text{
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+}

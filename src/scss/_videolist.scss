@@ -1,7 +1,7 @@
 .videolist {
-   grid-area: videolist; 
+    grid-area: videolist;
     @include d-flex(space-around, center);
-    background-color: #0f0f0f; 
+    background-color: #0f0f0f;
     overflow: hidden;
     /*  max-height: 300px; */
     /* overflow-y: auto;
@@ -12,16 +12,20 @@
 .videoitem {
     max-width: 17%;
     height: auto;
+
     >a {
         text-decoration: none;
     }
-    &--container{
+
+    &--container {
         @include d-flex(space-between, flex-start);
-        flex-direction: column; 
-        &:hover{
+        flex-direction: column;
+
+        &:hover {
             transform: scale(1.1);
         }
     }
+
     &--thumbs {
         border-radius: 15px;
         width: 100%;
@@ -42,15 +46,22 @@
 
     }
 
-    &--channeltitle {
-        font-size: 0.7rem;
-        height: 15%;
-        line-height: 2rem;
-        font-weight: 500;
-        max-height: 4rem;
-       /*  text-overflow: ellipsis; */
-        overflow: hidden;
-        white-space: nowrap;
-        color: #AAAAAA;
+    &--subtitle {
+        @include d-flex(space-between,center);
+        width: 100%;
+        &>img{
+            width:16px;
+        }
+        &--channeltitle {
+            font-size: 0.7rem;
+            height: 15%;
+            line-height: 2rem;
+            font-weight: 500;
+            max-height: 4rem;
+            /*  text-overflow: ellipsis; */
+            overflow: hidden;
+            white-space: nowrap;
+            color: #AAAAAA;
+        }
     }
 }
