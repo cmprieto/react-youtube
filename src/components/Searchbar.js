@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useUserContext } from "../providers/UserProvider";
 import lupa from "../assets/icon/buscar.png";
-import { useLocalStorage } from "@uidotdev/usehooks";
 
 const Searchbar = () => {
   const { setTermFromSearchBar, setDataYoutube } = useUserContext();

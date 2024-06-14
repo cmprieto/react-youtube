@@ -6,7 +6,7 @@ export const useUserContext = () => useContext(AppContext);
 
 const UserProvider = ({ children }) => {
   const [dataYoutube, setDataYoutube] = useState();
-  const [termFromSearchBar, setTermFromSearchBar]=useState('indurain');
+  const [termFromSearchBar, setTermFromSearchBar]=useState('');
 
 /*   const [urlthumb,setUrlthumb] =useState(''); */
 

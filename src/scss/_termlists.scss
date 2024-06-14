@@ -1,14 +1,60 @@
-.termContainer{
-    border: 1px solid orange;
-    @include d-flex(space-around,center);
-    flex-direction: row;
-    flex-wrap: wrap;
-    &--img{
-        border-radius: 100px;
-        width: 50px;
+.term{
+    border: 1px solid $color-blue;
+    border-radius: 15px;
+    padding: 1rem;
+    &>h1{
+        text-align: center
+        
     }
-    &--text{
-        font-size: 0.8rem;
-        font-weight: 600;
+}
+.termContainer {
+    @include d-flex(center, center);
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: $color-dark-grey;
+    border-radius: 15px;
+    &--list {
+        @include d-flex(space-between, center);
+        width: 100%;
+        margin: 0.5rem;
+
+        &--img {
+            border-radius: 100px;
+            width: 50px;
+        }
+
+        &--text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        &--button {
+            width:90px;
+            border-radius: 10px;
+            border: 0px;
+            background-color: red;
+            color: #f1f1f1;
+            padding: 0 12px;
+            height: 2.3rem;
+
+            &:hover {
+                background-color: #5346464f;
+            }
+
+            &:active {
+                background-color: whitesmoke;
+      
+                color: red;
+            }
+
+            &>p {
+                font-family: $project-font;
+                font-weight: 600;
+                font-size: 0.8rem;
+            }
+        }
+
     }
 }

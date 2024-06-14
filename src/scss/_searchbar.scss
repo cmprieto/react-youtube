@@ -4,10 +4,12 @@
     @include flex-center;
     max-width: 536px;
     width: 50%;
-    &--form{
-        @include flex-center;
-    }   flex-direction: row;
 
+    &--form {
+        @include flex-center;
+        flex-direction: row;
+        width: 100%;
+    }
 }
 
 .searchTerm {
@@ -19,7 +21,7 @@
     border-radius: 5px 0 0 5px;
     outline: none;
     background: $color-background;
-    color: #f5f5f5eb; 
+    color: #f5f5f5eb;
 }
 
 .searchTerm:focus {
@@ -36,11 +38,13 @@
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    font-size:1rem;
+    font-size: 1rem;
     @include flex-center;
+
     &--lupa {
         width: 1rem;
     }
+
     &:focus {
         color: $color-blue;
         border: 2px solid $color-blue;

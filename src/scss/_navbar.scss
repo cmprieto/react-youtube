@@ -32,10 +32,9 @@
             }
 
             &:active {
-                background-color: whitesmoke;
-                /* background: #534646; */
-                opacity: 0.3;
-                color: white;
+                background-color: #f1f1f1;
+                color:$color-dark-grey;
+                color: #0f0f0f;
             }
 
             &>p {
