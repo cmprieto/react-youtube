@@ -14,7 +14,7 @@ const NavBar = () => {
 
       <NavLink to="/react-youtube/videodetail/"><button className='navbar--menu--button'><p>Liked videos</p></button></NavLink>
 
-      <NavLink to="/react-youtube"><button className='navbar--menu--button'><p>Saved videos</p></button></NavLink>
+      <NavLink to="/react-youtube/favorites/"><button className='navbar--menu--button'><p>Favorites</p></button></NavLink>
       </div>
     </div>
   );

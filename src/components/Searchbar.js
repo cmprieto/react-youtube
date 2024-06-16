@@ -4,8 +4,7 @@ import lupa from "../assets/icon/buscar.png";
 
 const Searchbar = () => {
   const { setTermFromSearchBar, setDataYoutube } = useUserContext();
-  const [texto, setTexto] = useState();/* 
-  const [busquedas, setBusquedas] = useLocalStorage("react-youtube", []); */
+  const [texto, setTexto] = useState();
 
   const handleChange = (e) => {
     setTexto(e.target.value);
@@ -16,8 +15,6 @@ const Searchbar = () => {
   const handleSubmit = (e) => {
     console.log("texto", texto);
     setDataYoutube();
-   /*  setBusquedas([...busquedas, texto /* , "url": 'url' *//*]); */
-    /*    addHistory(texto); */
     setTermFromSearchBar(texto);
     e.preventDefault();
   };

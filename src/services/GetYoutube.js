@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useUserContext } from "../providers/UserProvider";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const GetYoutube = () => {
   const { setDataYoutube, termFromSearchBar } = useUserContext();
-/* const [lastSearch, setLastSearch]=useState(); */
+
  /*  const API_KEY = "AIzaSyCqwMC8nrhsDfLP3jLfCcNBwPYAgj4SNOM";   */
     const API_KEY = "AIzaSyDOIgF-P8fWilqykKHvJkHsVFQbrWxWV-k";
  /*      const API_KEY = "AIzaSyAqmAXnlj9Sn6cNIAT-HpOC8LzjGClu8r0";   */
@@ -24,7 +24,6 @@ const GetYoutube = () => {
           .then((res) => {
             setDataYoutube(res.data.items);
             console.log('res',res);
-          /*   setLastSearch(res.data.items[0].snippet.thumbnails.default.url); */
           //  alert("estoy haciendo una llamada a API");
           });
       }

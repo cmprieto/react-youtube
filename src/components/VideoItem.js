@@ -23,7 +23,7 @@ const VideoItem = ({ video }) => {
                 <p className="videoitem--subtitle--channeltitle">
                   {video.snippet.channelTitle}
                 </p>
-                <img src={fav} alt="favorito"></img>
+                {/* <img src={fav} alt="favorito"></img> */}
               </div>
             </div>
           )}

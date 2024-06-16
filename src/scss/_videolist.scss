@@ -8,7 +8,13 @@
     overflow-x: hidden;
     scroll-behavior: smooth; */
 }
-
+.videolistFav{
+    grid-area: main;
+    @include d-flex(space-around, center);
+    background-color: #0f0f0f;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
 .videoitem {
     max-width: 17%;
     height: auto;
