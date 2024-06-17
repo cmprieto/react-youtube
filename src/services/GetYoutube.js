@@ -3,11 +3,11 @@ import { useUserContext } from "../providers/UserProvider";
 import { useEffect } from "react";
 
 const GetYoutube = () => {
-  const { setDataYoutube, termFromSearchBar } = useUserContext();
+  const { setDataApiYoutube, termFromSearchBar } = useUserContext();
 
- /*  const API_KEY = "AIzaSyCqwMC8nrhsDfLP3jLfCcNBwPYAgj4SNOM";   */
-    const API_KEY = "AIzaSyDOIgF-P8fWilqykKHvJkHsVFQbrWxWV-k";
- /*      const API_KEY = "AIzaSyAqmAXnlj9Sn6cNIAT-HpOC8LzjGClu8r0";   */
+  const API_KEY = "AIzaSyCqwMC8nrhsDfLP3jLfCcNBwPYAgj4SNOM";   
+/*     const API_KEY = "AIzaSyDOIgF-P8fWilqykKHvJkHsVFQbrWxWV-k";
+ */ /*      const API_KEY = "AIzaSyAqmAXnlj9Sn6cNIAT-HpOC8LzjGClu8r0";   */
   
   useEffect(() => {
     const searcher = async () => {
@@ -22,16 +22,13 @@ const GetYoutube = () => {
             },
           })
           .then((res) => {
-            setDataYoutube(res.data.items);
+            setDataApiYoutube(res.data.items);
             console.log('res',res);
           //  alert("estoy haciendo una llamada a API");
           });
       }
     };
     searcher();
-    
-    //additem aqui pasando paramentros a metodo de contexto?? no se si se ha actualizdo el estado 
-
   }, [termFromSearchBar]); 
 /* 
   useEffect(() => {

@@ -1,16 +1,16 @@
-import  { Fragment } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import fav from "../assets/icon/fav.png";
+import favSelected from "../assets/icon/fav--selected.png";
 const VideoItem = ({ video }) => {
-
-   /* video && console.log('desdevideoitem '+video.snippet.thumbnails.default.url); */
 
   return (
     <Fragment>
       {video && (
         <Link
           to={`/react-youtube/videodetail/${video.id.videoId}`}
-          state={{ state: { video } }}>
+          state={{ state: { video } }}
+        >
           {video && (
             <div className="videoitem--container">
               <img
@@ -23,7 +23,11 @@ const VideoItem = ({ video }) => {
                 <p className="videoitem--subtitle--channeltitle">
                   {video.snippet.channelTitle}
                 </p>
-                {/* <img src={fav} alt="favorito"></img> */}
+                {video.isFavorite ? (
+                  <img src={favSelected} alt="favorito" />
+                ) : (
+                  <img src={fav} alt="NoFavorito" />
+                )}
               </div>
             </div>
           )}

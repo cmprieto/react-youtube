@@ -12,7 +12,7 @@ const NavBar = () => {
 
       <NavLink to="/react-youtube/history"><button className='navbar--menu--button'><p>History</p></button></NavLink>
 
-      <NavLink to="/react-youtube/videodetail/"><button className='navbar--menu--button'><p>Liked videos</p></button></NavLink>
+      <NavLink to="/react-youtube/videodetail/"><button className='navbar--menu--button'><p>Player</p></button></NavLink>
 
       <NavLink to="/react-youtube/favorites/"><button className='navbar--menu--button'><p>Favorites</p></button></NavLink>
       </div>

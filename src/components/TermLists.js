@@ -9,7 +9,6 @@ const TermLists = () => {
     setDataYoutube();
     setTermFromSearchBar(busqueda);
   };
-  /*   const handleSubmit2 = ({busqueda}) => alert(busqueda); */
 
   return (
     <div className="term">
