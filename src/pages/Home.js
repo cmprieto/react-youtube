@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import VideoList from "../components/VideoList";
 import TermLists from "../components/TermLists";
-
 import Searchbar from "../components/Searchbar";
+import VideoListFav from "../components/VideoListFav";
 
 const Home = () => {
   return (
@@ -11,7 +11,8 @@ const Home = () => {
      {/*  <Searchbar/> */}
         {/*       <VideoDetail /> */}
         <VideoList /> 
- {/*        <VideoList /> */}
+        <VideoListFav/>
+
         <TermLists/>
       </div>
     </Fragment>

@@ -14,16 +14,16 @@ const UserProvider = ({ children }) => {
 
   // HELPERS
 
-  //REVISA RESULTADO LISTADO DE VIDEOS SE ENCUENTRA EN LOCALSTORAGE
-  //Y SI ES ASI AÑADIR TRUE AL NUEVO ESTADO --> MEDIANTE USEEFFECT
-
+  //REVISA LISTADO DE VIDEOS FAVORITOS SE ENCUENTRAN EN LOCALSTORAGE
+  //SI ESTÁ AÑADIMOS TRUE A 1 NUEVO ESTADO --> MEDIANTE USEEFFECT
+// AÑADIR NUEVA PROPIEDAD A CADA VIDEO QUE INDICA SI ES FAV CON 1 BOOLEANO. 
   const isFav = () => {
     const addIsFavoriteToAPI = dataApiYoutube.map((item, i) => {
       const existe = favorito.some((dataApiYoutube) => item.etag === dataApiYoutube.etag); //METODO SOME DEVUELVE UN BOOLEANO SI AL MENOS UNA VEZ SE CUMPLA LA CONDICION
       /* console.log("existe", existe); */      
       return { ...dataYoutube, ...item, isFavorite: existe };
     });
-    console.log("nuevosdatos", addIsFavoriteToAPI);
+    console.log("addIsFavoriteToAPI", addIsFavoriteToAPI);
     setDataYoutube(addIsFavoriteToAPI);
   };
 

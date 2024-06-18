@@ -25,12 +25,11 @@ const VideoList = () => {
         /* setUrlthumb(dataYoutube[0].snippet.thumbnails.default.url); */ /*  ---> NO FUNCIONA PQ NO PUEDES MANEJAR VALOR DEL ESTADO ACTUALIZADO HASTA Q TERMINA DE RENDERIZAR TODO EL COMPONENTE */
         //PARA PODER MANEJAR EL ESTADO UNA VEZ ACTUALIZADO ANTES DE QUE FINALICE EL RENDERIZADO DEL COMPONENTE HAY QUE HACERLO ASI
         setUrlthumb((prevState) => {
-          //alert('aaaaaaaaaaaaaaa');
           const newState = dataYoutube[0].snippet.thumbnails.default.url;
-          // Hacer algo con el nuevo estado aquí si es necesario
-          urlthumb && update(newState);
-          console.log("New State:", newState);
-          return newState;
+            // Hacer algo con el nuevo estado aquí si es necesario
+              urlthumb && update(newState);
+              console.log("New State:", newState);
+              return newState;
         });
       }
     };

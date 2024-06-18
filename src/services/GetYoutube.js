@@ -30,23 +30,6 @@ const GetYoutube = () => {
     };
     searcher();
   }, [termFromSearchBar]); 
-/* 
-  useEffect(() => {
-    axios
-      .get("https://www.googleapis.com/youtube/v3/search?", {
-        params: {
-          part: "snippet",
-          maxResults: 5,
-          q: termFromSearchBar,
-          key: API_KEY,
-        },
-      })
-      .then((res) => {
-        setDataYoutube(res.data.items);
-      // setLastSearch(res.data.items.dataYoutube[0].snippet.thumbnails.default.url);
-        alert("estoy haciendo una llamada a API");
-      });
-  }, [termFromSearchBar]);
-}; */
+
 }
 export default GetYoutube;

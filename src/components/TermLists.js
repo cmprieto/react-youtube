@@ -6,7 +6,7 @@ const TermLists = () => {
   const { setTermFromSearchBar, setDataYoutube } = useUserContext();
 
   const handleSubmit2 = ({ busqueda }) => {
-    setDataYoutube();
+    setDataYoutube();         //RESETEAMOS ESTADO API EN CADA NUEVA BUSQUEDA
     setTermFromSearchBar(busqueda);
   };
 
