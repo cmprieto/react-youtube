@@ -1,9 +1,10 @@
-import { useLocalStorage } from "@uidotdev/usehooks";
+import {useLocalStorage} from '@uidotdev/usehooks';
 import VideoItem from "./VideoItem";
 
-const VideoListFav = () => {
-  const [favorito] = useLocalStorage("favoritos-youtube", []);
 
+const VideoListFav = () => {
+
+  const [favorito] = useLocalStorage("favoritos-youtube", []);
   return (
     <div className="videolistFavContainer">
       <h2>Favorites videos</h2>

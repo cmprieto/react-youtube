@@ -3,13 +3,13 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 
 const TermLists = () => {
   const [busquedas] = useLocalStorage("react-youtube", []);
-  const { setTermFromSearchBar, setDataYoutube } = useUserContext();
+  const { handleSubmitTermLists } = useUserContext();
 
-  const handleSubmit2 = ({ busqueda }) => {
-    setDataYoutube();         //RESETEAMOS ESTADO API EN CADA NUEVA BUSQUEDA
+   /* const handleSubmit3 = ({ busqueda }) => {
+    //setDataYoutube();         //RESETEAMOS ESTADO API EN CADA NUEVA BUSQUEDA
     setTermFromSearchBar(busqueda);
   };
-
+ */
   return (
     <div className="term">
       <h1>Last searches</h1>
@@ -27,7 +27,7 @@ const TermLists = () => {
                   <p className="termContainer--list--text">{busqueda}</p>
                   <button
                     type="button"
-                    onClick={() => handleSubmit2({ busqueda })}
+                    onClick={() => handleSubmitTermLists({ busqueda })}
                     className="termContainer--list--button"
                   >
                     <p>cargar videos</p>
@@ -36,7 +36,7 @@ const TermLists = () => {
               );
             }
           })}
-      </div>{" "}
+      </div>
     </div>
   );
 };

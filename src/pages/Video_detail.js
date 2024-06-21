@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import VideoList from "../components/VideoList";
 import VideoDetail from "../components/VideoDetail";
+import VideoListChannel from "../components/VideoListChannel";
 
 const Video_detail = () => {
   return (
@@ -8,6 +9,7 @@ const Video_detail = () => {
       <div className="container--videodetail">
         <VideoDetail />
         <VideoList />
+        <VideoListChannel/>
       </div>
     </Fragment>
   );

@@ -1,14 +1,21 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import fav from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
+
 const VideoItem = ({ video }) => {
 
+/*   let ID='';
+  useEffect(() => {
+    video.id.videoId ? (ID = video.id.videoId) : (ID = video.id);
+    console.log('id',ID);
+  }, [ID]);
+ */
   return (
     <Fragment>
       {video && (
         <Link
-          to={`/react-youtube/videodetail/${video.id.videoId}`}
+          to={`/react-youtube/videodetail/${ video.id.videoId ? video.id.videoId : video.id}`}
           state={{ state: { video } }}
         >
           {video && (
@@ -22,6 +29,9 @@ const VideoItem = ({ video }) => {
               <div className="videoitem--subtitle">
                 <p className="videoitem--subtitle--channeltitle">
                   {video.snippet.channelTitle}
+                </p>
+                <p className="videoitem--subtitle--channeltitle">
+                  {new Date(video.snippet.publishTime).toLocaleDateString()}
                 </p>
                 {video.isFavorite ? (
                   <img src={favSelected} alt="favorito" />

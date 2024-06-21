@@ -1,18 +1,6 @@
-.videolist {
-    grid-area: videolist;
-    @include d-flex(space-around, center);
-    background-color: #0f0f0f;
-    overflow: hidden;
-    /*  max-height: 300px; */
-    /* overflow-y: auto;
-    overflow-x: hidden;
-    scroll-behavior: smooth; */
-}
-
-.videolistFavContainer {
+.videoListContainer {
     grid-area: main;
-  //  @include d-flex(space-around, center);
-    //flex-wrap: wrap;
+    background-color: #0f0f0f;
     overflow: hidden;
     border: 1px solid $color-blue;
     border-radius: 15px;
@@ -20,7 +8,34 @@
     margin: 1rem;
     &>h2 {
         text-align: center;
+        text-transform: uppercase;
     }
+}
+
+
+.videolist {
+    @include d-flex(space-around, center);
+    background-color: #0f0f0f;
+    overflow: hidden;
+/*     overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth; */
+}
+
+.videolistFavContainer {
+    grid-area: main;
+    //  @include d-flex(space-around, center);
+    //flex-wrap: wrap;
+   // overflow: scroll;
+    border: 1px solid $color-blue;
+    border-radius: 15px;
+    padding: 1rem;
+    margin: 1rem;
+
+    &>h2 {
+        text-align: center;
+    }
+
     &--videos {
         @include d-flex(space-around, center);
         flex-wrap: wrap;

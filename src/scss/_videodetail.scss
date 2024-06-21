@@ -1,5 +1,5 @@
 .videodetail {
-  grid-area: videodetail;
+  grid-area: main;
   background-color: #0f0f0f;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,7 +34,7 @@
       padding: 10px;
       background-color: $color-dark-grey;
       width: 90%;
-      @include d-flex(space-around,center);
+      @include d-flex(space-around, center);
 
       &--texto {
         font-weight: 500;
@@ -42,20 +42,29 @@
 
         &>h1 {
           font-size: 1.1rem;
-          color: white;
+          color: $color-titletext;
           line-height: 2rem;
         }
 
-        &>p {
+        &--description {
           font-size: 0.9rem;
-          color: white;
+          line-height: 2rem;
+          color: $color-channeltitletext;
         }
+
+        &--channel {
+          color: $color-titletext;
+          font-weight: 600;
+          line-height: 1.8rem;
+        }
+
       }
 
       &>img {
-        margin:0.9rem;
+        margin: 0.9rem;
         max-width: 24px;
-        &:hover{
+
+        &:hover {
           opacity: 0.5;
         }
       }
