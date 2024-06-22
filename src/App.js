@@ -13,7 +13,7 @@ const App = () => {
     <UserProvider>
       <GetYoutube/>
 {/*       <GetRecommended/> */}
-      <GetChannels/>
+    {/*   <GetChannels/> */}
       <Router/>
       
     </UserProvider>

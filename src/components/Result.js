@@ -58,8 +58,8 @@ const Result = ({ videotoShow }) => {
         ) : (
           <img src={favo} alt="NoFavorito" onClick={handleFav} />
         )}
-        <button onClick={handleChannel}>Ver más videos de este canal</button>
-      </div>
+      {/*   <button onClick={handleChannel}>videos de canal</button>
+      */} </div>
     </Fragment>
   );
 };

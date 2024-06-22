@@ -24,7 +24,7 @@ console.log('upPage',upPage);
               maxResults: 5,
               q: termFromSearchBar,
               key: API_KEY,
-              pageToken: page,
+        /*       pageToken: page, */
             },
           })
           .then((res) => {
