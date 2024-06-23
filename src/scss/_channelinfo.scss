@@ -1,0 +1,39 @@
+.channelInfo {
+    padding: 1rem;
+    border-bottom: 1px solid $color-channeltitletext;
+
+    &--container {
+        @include d-flex(flex-start, center);
+        width: 100%;
+
+        &--cabecera {
+            @include d-flex(flex-start, center);
+
+            &--img {
+                border-radius: 200px;
+                width: 180px;
+            }
+
+            &--title {
+                margin-left: 1.3rem;
+
+                &>h1 {
+                    font-size: 2.5rem;
+                }
+                &--description {
+                    line-height: 1.3;
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    color: $color-channeltitletext;
+                }
+                &>p {
+                    font-size: 0.9rem;
+                    color: $color-channeltitletext;
+                    line-height: 2;
+                }
+
+               
+            }
+        }
+    }
+}

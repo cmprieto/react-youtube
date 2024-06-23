@@ -9,7 +9,6 @@ const Video_detail = () => {
       <div className="container--videodetail">
         <VideoDetail />
         <VideoList />
-        <VideoListChannel/>
       </div>
     </Fragment>
   );

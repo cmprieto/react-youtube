@@ -1,20 +1,28 @@
 import { useEffect } from "react";
-import { useUserContext } from "../providers/UserProvider";
-import VideoItem from "./VideoItem";
 import { useParams } from "react-router-dom";
+import { useUserContext } from "../providers/UserProvider";
+import VideoListChannelInformation from "./VideoListChannelInformation";
+import VideoItem from "./VideoItem";
 
 const VideoListChannel = () => {
   const { id } = useParams();
-  const { listChannel, channel, setChannel } = useUserContext();
+  const {
+    listChannel,
+    channel,
+    setChannel,
+    channelInformation,
+    setChannelInformation,
+  } = useUserContext();
   setChannel(id);
 
-  useEffect(()=>{
+  useEffect(() => {
     setChannel(id);
-  },[]);
+  }, []);
+
   return (
     <div className="videolistFavContainer">
-      {listChannel && (
-        <h1>VideoListChannel: {listChannel[0].snippet.channelTitle}</h1>
+      {channelInformation && (
+        <VideoListChannelInformation information={channelInformation} />
       )}
       <div className="videolistFavContainer--videos">
         {listChannel &&

@@ -12,6 +12,7 @@ const UserProvider = ({ children }) => {
   const [channel, setChannel] = useState();
   const [listChannel, setListChannel] = useState();
   const [page, setPage] = useState('CAUQAA');
+  const[channelInformation, setChannelInformation]=useState();
   // HELPERS
 
   //REVISA LISTADO DE VIDEOS FAVORITOS SE ENCUENTRAN EN LOCALSTORAGE
@@ -55,7 +56,9 @@ const UserProvider = ({ children }) => {
         setListChannel,
         page,
         setPage,
-        handleSubmitTermLists
+        handleSubmitTermLists,
+        channelInformation,
+        setChannelInformation
       }}
     >
       {children}
