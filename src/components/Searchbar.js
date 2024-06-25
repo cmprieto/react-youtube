@@ -8,7 +8,6 @@ const Searchbar = () => {
 
   const handleChange = (e) => {
     setTexto(e.target.value);
-    console.log(texto);
   };
 
   const handleSubmit = (e) => {

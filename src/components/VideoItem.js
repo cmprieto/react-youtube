@@ -1,16 +1,10 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import fav from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
 
 const VideoItem = ({ video }) => {
 
-/*   let ID='';
-  useEffect(() => {
-    video.id.videoId ? (ID = video.id.videoId) : (ID = video.id);
-    console.log('id',ID);
-  }, [ID]);
- */
   return (
     <Fragment>
       {video && (

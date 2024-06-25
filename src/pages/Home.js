@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import VideoList from "../components/VideoList";
 import VideoListFav from "../components/VideoListFav";
 import TermLists from "../components/TermLists";
+import ChannelsVisited from "../components/ChannelsVisited";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
         <VideoList /> 
         <VideoListFav/>
         <TermLists/>
+        <ChannelsVisited/>
       </div>
     </Fragment>
   );

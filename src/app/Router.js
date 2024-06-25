@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
+import History from "../pages/History";
 import Video_detail from "../pages/Video_detail";
 import Layout from "../components/Layout";
 import TermLists from "../components/TermLists";
@@ -15,7 +16,7 @@ const Router = () => (
         <Route index path="/react-youtube" element={<Home />} />
         <Route path="/react-youtube/videodetail" element={<Video_detail />} />
         <Route path="/react-youtube/videodetail/:id" element={<Video_detail/>} />
-        <Route path="/react-youtube/history/" element={<TermLists/>} />
+        <Route path="/react-youtube/history/" element={<History/>} />
         <Route path="/react-youtube/favorites/" element={<VideoListFav/>} />
         <Route path="/react-youtube/channel/" element={<VideoListChannel/>} />
         <Route path="/react-youtube/channel/:id" element={<VideoListChannel/>} />

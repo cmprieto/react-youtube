@@ -3,7 +3,7 @@ import { useUserContext } from "../providers/UserProvider";
 import { useEffect } from "react";
 
 const GetYoutube = () => {
-  const { setDataApiYoutube, termFromSearchBar, page,setPage } = useUserContext();
+  const { setDataApiYoutube,setTermFromSearchBar, termFromSearchBar, page,setPage } = useUserContext();
 
   /*   const API_KEY = "AIzaSyCqwMC8nrhsDfLP3jLfCcNBwPYAgj4SNOM"; */
 
@@ -36,6 +36,7 @@ console.log('upPage',upPage);
     };
     searcher();
     setPage(''); // RESETEAMOS PAGE PARA QUE CUANDO SE REPITA EL VALOR DE AVANZAR PG ACTÚE EL USEEFFECT. 
+
   }, [termFromSearchBar, page ]);
 };
 export default GetYoutube;
