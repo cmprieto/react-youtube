@@ -51,7 +51,7 @@ const handlepageDown=()=>{
 
   return (
     <div className="videoListContainer">
-      <h2>Your search!</h2>
+     {dataYoutube? <h2>Your search!</h2>:<h2>Search your videos</h2>}
       <div className="videolist">
         {dataYoutube &&
           dataYoutube.map((item, i) => {

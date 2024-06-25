@@ -13,7 +13,7 @@ const UserProvider = ({ children }) => {
   const [listChannel, setListChannel] = useState();
   const [page, setPage] = useState('CAUQAA');
   const[channelInformation, setChannelInformation]=useState();
-  
+
   // HELPERS
 
   //REVISA LISTADO DE VIDEOS FAVORITOS SE ENCUENTRAN EN LOCALSTORAGE
@@ -32,10 +32,6 @@ const UserProvider = ({ children }) => {
   };
 
 
- const handleSubmitTermLists = ({ busqueda }) => {
-    //setDataYoutube();         //RESETEAMOS ESTADO API EN CADA NUEVA BUSQUEDA->NO CAL
- setTermFromSearchBar(busqueda);
-  };
 
   useEffect(() => {
     setDataYoutube();
@@ -57,7 +53,6 @@ const UserProvider = ({ children }) => {
         setListChannel,
         page,
         setPage,
-        handleSubmitTermLists,
         channelInformation,
         setChannelInformation
       }}

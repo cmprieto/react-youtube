@@ -1,15 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../providers/UserProvider";
 import { useLocalStorage } from "@uidotdev/usehooks";
 
 const TermLists = () => {
   const [busquedas] = useLocalStorage("react-youtube", []);
-  const { handleSubmitTermLists } = useUserContext();
+  const { setTermFromSearchBar } = useUserContext();
+  const navigate = useNavigate();
 
-   /* const handleSubmit3 = ({ busqueda }) => {
-    //setDataYoutube();         //RESETEAMOS ESTADO API EN CADA NUEVA BUSQUEDA
+  const handleSubmitTermLists = ({ busqueda }) => {
+    //setDataYoutube();         //RESETEAMOS ESTADO API EN CADA NUEVA BUSQUEDA->NO CAL
     setTermFromSearchBar(busqueda);
+    navigate("/react-youtube/videodetail/");
   };
- */
+
   return (
     <div className="term">
       <h1>Last searches</h1>
@@ -32,7 +35,7 @@ const TermLists = () => {
                   >
                     <p>cargar videos</p>
                   </button>
-                </div>
+                </div> 
               );
             }
           })}
