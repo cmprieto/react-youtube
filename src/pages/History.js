@@ -3,7 +3,7 @@ import ChannelsVisited from "../components/ChannelsVisited";
 
 const History = () => {
   return (
-    <div>
+    <div className="historyContainer">
       <TermLists />
       <ChannelsVisited />
     </div>

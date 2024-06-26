@@ -5,7 +5,7 @@ import { useUserContext } from "../providers/UserProvider";
 const VideoDetail = () => {
   let { state } = useLocation();
   const { dataYoutube } = useUserContext();
-  const { id } = useParams();
+ // const { id } = useParams();
   return (
     <div className="videodetail">
       <div className="videodetail--videocontainer">

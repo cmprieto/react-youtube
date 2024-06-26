@@ -1,35 +1,51 @@
-.term {
+.channel {
     grid-area: main;
-    border: 1px solid $color-blue;
+    //border: 1px solid $color-blue;
     border-radius: 15px;
     padding: 0.5rem;
     margin: 0.5rem;
-
-    // width: 100%;
+  width: 100%;
     &>h1 {
         text-align: center
     }
 }
 
 
-.termContainer {
+.channelContainer {
     @include d-flex(space-around,center);
-    flex-direction: column;
+    flex-wrap: nowrap;
     padding: 1rem;
     margin: 1rem;
     background-color: $color-dark-grey;
     border-radius: 15px;
+    &--link{
+        text-decoration: none;
+        color: white;
+        width: 90%;
+    
+        &:hover {
+            color: red;
+    
+        }
+    }
 
     &--list {
         @include d-flex(space-between, center);
+        flex-direction: column;
         width: 100%;
-        margin: 0.5rem;
+        height: 100%;
+        padding: 0.5rem;
         &--img {
             border-radius: 100px;
-            width: 50px;
+            width: 100px;
+        }
+        &:hover {
+            background-color: $color-channeltitletext;
+            border-radius: 10px;
         }
 
         &--text {
+            margin-top: 1rem;
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;

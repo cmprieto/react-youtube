@@ -8,11 +8,10 @@ const VideoListChannel = () => {
   const { id } = useParams();
   const {
     listChannel,
-    channel,
     setChannel,
     channelInformation,
-    setChannelInformation,
   } = useUserContext();
+
   setChannel(id);
 
   useEffect(() => {

@@ -1,0 +1,5 @@
+.historyContainer{
+    grid-area: main;
+    @include d-flex(center,center);
+    flex-direction: column;
+}

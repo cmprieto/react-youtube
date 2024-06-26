@@ -51,7 +51,7 @@ const Result = ({ videotoShow }) => {
           <h1>{videotoShow.snippet.title}</h1>
           <p className="videodetail--videocontainer--subframe--texto--description">{videotoShow.snippet.description}</p>
          {/*  <p className="videodetail--videocontainer--subframe--texto--time"></p> */}
-          <p className="videodetail--videocontainer--subframe--texto--channel">published by <Link to={`/react-youtube/channel/${videotoShow.snippet.channelId}`}>{videotoShow.snippet.channelTitle}</Link> in {new Date(videotoShow.snippet.publishTime).toLocaleDateString()}</p>
+          <p className="videodetail--videocontainer--subframe--texto--channel">published by <Link to={`/react-youtube/channel/${videotoShow.snippet.channelId}`} className="videodetail--videocontainer--subframe--texto--channel--link">{videotoShow.snippet.channelTitle}</Link> in {new Date(videotoShow.snippet.publishTime).toLocaleDateString()}</p>
         </div>
         {videotoShow.isFavorite ? (
           <img src={favSelected} alt="favorito" onClick={handleFav} />
