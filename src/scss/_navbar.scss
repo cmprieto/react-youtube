@@ -13,7 +13,7 @@
     }
 
     &--menu {
-       @include d-flex(space-around, center);
+       @include d-flex(flex-start, center);
        flex-direction: column;
        height: 40%;
 
@@ -40,6 +40,7 @@
             &>p {
                 font-family: $project-font;
                 font-weight: 700;
+                font-size: 0.9rem;
             }
         }
     }
@@ -49,4 +50,4 @@
 .active {
     background-color: $color-dark-grey;
     border-radius: 15px;
-}
+}  

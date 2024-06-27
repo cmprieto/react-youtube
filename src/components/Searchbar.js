@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useUserContext } from "../providers/UserProvider";
+import {useLocalStorageContext} from '../providers/LocalStorageContext';
 import lupa from "../assets/icon/buscar.png";
 
 const Searchbar = () => {
   const { setTermFromSearchBar, setDataYoutube } = useUserContext();
+  const { LimitTermsList } = useLocalStorageContext();
   const [texto, setTexto] = useState();
 
   const handleChange = (e) => {
@@ -13,6 +15,7 @@ const Searchbar = () => {
   const handleSubmit = (e) => {
     console.log("texto", texto);
     setDataYoutube();
+    LimitTermsList();
     setTermFromSearchBar(texto);
     e.preventDefault();
   };
@@ -28,7 +31,7 @@ const Searchbar = () => {
         <input
           type="search"
           className="searchTerm"
-          placeholder="Buscar"
+          placeholder="Search"
           onChange={handleChange}
           id="inputbuscador"
         />

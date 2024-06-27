@@ -4,7 +4,7 @@
     border-radius: 15px;
     padding: 0.5rem;
     margin: 0.5rem;
-  width: 100%;
+    width: 100%;
     &>h1 {
         text-align: center
     }
@@ -13,7 +13,7 @@
 
 .channelContainer {
     @include d-flex(space-around,center);
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 1rem;
     margin: 1rem;
     background-color: $color-dark-grey;
@@ -21,11 +21,10 @@
     &--link{
         text-decoration: none;
         color: white;
-        width: 90%;
-    
+        margin:0.5rem;
+      /*   width: 90%; */
         &:hover {
             color: red;
-    
         }
     }
 

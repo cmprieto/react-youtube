@@ -1,43 +1,27 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useEffect } from "react";
+import {useLocalStorageContext} from '../providers/LocalStorageContext';
 
 const VideoListChannelInformation = ({ information }) => {
   const [lastChannel, setLastChannel] = useLocalStorage(
     "channels-react-youtube",
     []
   );
-
+  const { LimitArrayChannelsFav } = useLocalStorageContext();
   //PONER UNA FUNCION REVISE SI EL CANAL VISITADO ESTÁ EN EL HISTORIAL CON METODO SOME
-  const Nmax = 14;
+
   let nombreCanal = "";
   const tieneNombre = (nombreCanal) => {
     return lastChannel.some((obj) => obj.id === nombreCanal);
   };
 
-  // LIMITAR Nº ITEMS DEL ARRAY DE LOCALSTORAGE A 15 Y poder grabar nuevos
-
-  const verificarNItems = () => {
-    let channels = localStorage.getItem("channels-react-youtube");
-    if (channels) {
-      channels = JSON.parse(channels);
-          if (channels.length > 14) {
-            alert("voy a borrarrrrr")
-            channels.slice(1, 13);
-          }
-    const updatedChannels = JSON.stringify(channels);
-    localStorage.setItem("channels-react-youtube", updatedChannels);
-    } else {
-      console.log("No hay datos almacenados bajo la clave 'channels-react-youtube'");
-    }
-  };
-
   useEffect(() => {
     //verifica si canal visitado está en la lista de localstorage
     nombreCanal = information.id;
-    const existeNombre = tieneNombre(nombreCanal);
-    //alert(existeNombre);
+    const existeNombre = tieneNombre(information.id);
+   // alert('existe nombre',existeNombre);
     
-    existeNombre === false && verificarNItems();  // -> LIMITAR Nº ITEMS DEL ARRAY DE LOCALSTORAGE A 15 Y poder grabar nuevos
+   ( existeNombre ) && LimitArrayChannelsFav();  // -> LIMITAR Nº ITEMS DEL ARRAY DE LOCALSTORAGE.METODO
    
     //solo añade canal visitado sino está en la lista de localstorage
     existeNombre === false &&
