@@ -1,9 +1,10 @@
 @media only screen and (min-width: 501px) and (max-width: 960px) {
     .container {
         grid-template-columns: 250px 1fr 1fr;
-        grid-template-rows: 50px 70% auto;
+        grid-template-rows: 75px 50px 70% auto;
         grid-template-areas:
-            " menu menu searchbar"
+            " menu menu menu"
+            "searchbar searchbar searchbar"
             " main main main"
             " main main main";
         /*  overflow-y: scroll;
@@ -28,32 +29,44 @@
 
     .searchbar {
         width: 90%;
-
     }
 
     .videodetail {
+        grid-template-rows: 500px;
+        height: auto;
+
         &--videocontainer {
             width: 100%;
 
-            &--text {
-                width: 100%;
+            &--subframe {
+                margin-top: 0.5rem;
 
-                &>h1 {
-                    font-size: 1rem;
-                    line-height: 1.5rem;
-                }
+                &--texto {
+                    width: 100%;
 
-                &>p {
-                    font-size: 0.8rem;
+                    &>h1 {
+                        font-size: 0.9rem;
+                        line-height: 1.5rem;
+                    }
+
+                    &>p {
+                        font-size: 0.8rem;
+                    }
+
+                    &--channel--link {
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
     }
 
-
     .videoitem {
+        max-width: 45%;
+        padding: 0.5rem;
+
         &--title {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
         }
 
         &--channeltitle {
@@ -61,5 +74,41 @@
         }
     }
 
+    .termContainer {
+        margin: 1rem 0rem;
 
+        &--list {
+            width: auto;
+
+            &--img {
+                width: 90px;
+            }
+
+            &--text {
+                font-size: 0.8rem;
+            }
+
+            &--button {
+                height: 2rem;
+            }
+        }
+    }
+
+    .channel {
+        margin: 1rem 0rem;
+    }
+
+    .channelInfo--container {
+        flex-direction: column;
+    }
+
+    .channelContainer {
+        padding: 0rem;
+        margin: 0.5rem;
+
+        &--list--img {
+            width: 16vw;
+            max-width: 100px;
+        }
+    }
 }

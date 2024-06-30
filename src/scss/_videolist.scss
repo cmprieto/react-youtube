@@ -7,7 +7,8 @@
     border: 1px solid $color-blue;
     border-radius: 15px;
     padding: 1rem;
-    margin: 1rem;
+    margin: 1rem 0.5rem;
+    max-width: 100%;
     &>h2 {
         text-align: center;
         text-transform: uppercase;
@@ -18,7 +19,7 @@
 .videolist {
     @include d-flex(space-around, center);
     background-color: #0f0f0f;
-
+    max-width: 100%;
     flex-wrap: wrap;
 /*     overflow-y: auto;
     overflow-x: hidden;
@@ -33,8 +34,8 @@
     border: 1px solid $color-blue;
     border-radius: 15px;
     padding: 1rem;
-    margin: 1rem;
-
+    margin: 1rem 0.5rem;
+    max-width: 100%;
     &>h2 {
         text-align: center;
     }

@@ -2,10 +2,10 @@
     .container {
         min-height: 100vh;
         grid-template-columns: 180px 1fr 1fr;
-        grid-template-rows: 75px 75px 80% 1200px;
+        grid-template-rows: 125px 60px 80% 1200px;
         grid-template-areas:
             " menu menu menu"
-             "searchbar searchbar searchbar"
+            "searchbar searchbar searchbar"
             " main main main"
             " main main main";
         overflow-y: scroll;
@@ -13,12 +13,13 @@
     }
 
     .navbar {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
 
         &--menu {
             @include d-flex(space-around, center);
             flex-direction: row;
+
             &--button {
                 width: auto;
 
@@ -30,6 +31,11 @@
         margin: 0px 0.5rem 0px 0.5rem;
         width: 90% !important;
 
+        &--form {
+            &>input {
+                font-size: 0.9rem;
+            }
+        }
     }
 
     .videodetail {
@@ -57,5 +63,56 @@
 
     .videoitem {
         max-width: 80%;
+    }
+
+
+
+
+    .termContainer {
+        margin: 1rem 0rem;
+
+        &--list {
+            width: auto;
+
+            &--img {
+                width: 90px;
+            }
+
+            &--text {
+                font-size: 0.8rem;
+            }
+
+            &--button {
+                height: 2rem;
+            }
+        }
+    }
+
+    .channel {
+        margin: 1rem 0rem;
+    }
+
+    .channelContainer {
+        padding: 0rem;
+        margin: 0.5rem;
+
+        &--list--img {
+            width: 16vw;
+            max-width: 100px;
+        }
+    }
+
+    .channelInfo--container {
+        flex-direction: column;
+
+        &>img {
+            width: 40%;
+        }
+
+        &--cabecera--title {
+            &>h1 {
+                font-size: 1.5rem;
+            }
+        }
     }
 }
