@@ -1,6 +1,7 @@
 .searchbar {
     grid-area: searchbar;
-    margin: 0.8rem auto;
+    justify-self: center;
+    margin: 0.8rem;
     @include flex-center;
     max-width: 536px;
     width: 50%;

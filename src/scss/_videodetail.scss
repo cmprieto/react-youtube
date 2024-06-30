@@ -32,9 +32,11 @@
     &--subframe {
       border-radius: 15px;
       padding: 10px;
-      background-color: $color-dark-grey;
+    //  background-color: $color-dark-grey;
       width: 100%;
       @include d-flex(space-around, center);
+     /*  border-left: 1px solid red;
+      border-right: 1px solid red; */
 
       &--texto {
         font-weight: 500;

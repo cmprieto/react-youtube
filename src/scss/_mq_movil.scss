@@ -2,14 +2,14 @@
     .container {
         min-height: 100vh;
         grid-template-columns: 180px 1fr 1fr;
-        grid-template-rows: 125px 60px 80% 1200px;
+        grid-template-rows: 125px 60px 80% auto;
         grid-template-areas:
             " menu menu menu"
             "searchbar searchbar searchbar"
             " main main main"
             " main main main";
-        overflow-y: scroll;
-        overflow-x: hidden;
+        /*      overflow-y: scroll;
+        overflow-x: hidden; */
     }
 
     .navbar {
@@ -28,8 +28,8 @@
     }
 
     .searchbar {
-        margin: 0px 0.5rem 0px 0.5rem;
-        width: 90% !important;
+        //  margin: 0rem 0.5rem ;
+        width: 90%;
 
         &--form {
             &>input {
@@ -39,19 +39,35 @@
     }
 
     .videodetail {
+        grid-template-rows: 500px;
+        height: auto;
+
         &--videocontainer {
             width: 100%;
 
-            &--text {
-                width: 100%;
+            &--subframe {
+                margin-top: 0.5rem;
 
-                &>h1 {
-                    font-size: 0.9rem;
-                    line-height: 1.5rem;
+                &--texto {
+                    width: 100%;
+
+                    &>h1 {
+                        font-size: 0.9rem;
+                        line-height: 1.5rem;
+                    }
+
+                    &>p {
+                        font-size: 0.8rem;
+                    }
+
+                    &--channel--link {
+                        font-size: 0.9rem;
+                    }
                 }
 
-                &>p {
-                    font-size: 0.8rem;
+                &>img {
+                    margin: 0.5rem;
+                    max-width: 18px;
                 }
             }
         }
@@ -64,8 +80,6 @@
     .videoitem {
         max-width: 80%;
     }
-
-
 
 
     .termContainer {
