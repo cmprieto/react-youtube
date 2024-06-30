@@ -1,15 +1,23 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Link } from "react-router-dom";
 import fav from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
+import { useUserContext } from "../providers/UserProvider";
 
 const VideoItem = ({ video }) => {
+  const { setTermFromSearchBar } = useUserContext();
+
+  useEffect(() => {
+    setTermFromSearchBar(); //RESETEO TERM PARA QUE SI REPETIMOS 1 TERM VUELVA A MOSTRAR LA RESPUESTA VIDEOS. 
+  }, []);
 
   return (
     <Fragment>
       {video && (
         <Link
-          to={`/react-youtube/videodetail/${ video.id.videoId ? video.id.videoId : video.id}`}
+          to={`/react-youtube/videodetail/${
+            video.id.videoId ? video.id.videoId : video.id
+          }`}
           state={{ state: { video } }}
         >
           {video && (

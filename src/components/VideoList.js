@@ -2,20 +2,26 @@ import { useUserContext } from "../providers/UserProvider";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 import VideoItem from "./VideoItem";
+import { useLocalStorageContext } from "../providers/LocalStorageContext";
 
 const VideoList = () => {
-  const { dataYoutube, termFromSearchBar, setPage } = useUserContext();
+  const { dataYoutube, termFromSearchBar, setTermFromSearchBar, setPage } =
+    useUserContext();
   const [busquedas, setBusquedas] = useLocalStorage("react-youtube", []);
   const [urlthumb, setUrlthumb] = useState("");
-
+  const { existTermInList, setExistTermInList } = useLocalStorageContext();
   //AÑADIMOS RESULTADO DE ULTIMAS BUSQUEDAS A LOCALSTORAGE
 
   const update = (newState) => {
     /* console.log("urlthumb previo", newState); */
-    setBusquedas([
-      { busqueda: termFromSearchBar, url: newState },
-      ...busquedas,
-    ]);
+    if (existTermInList === false) {
+      //sino existe se añade a localStorage
+      setBusquedas([
+        { busqueda: termFromSearchBar, url: newState },
+        ...busquedas,
+      ]);
+    }
+    existTermInList === true && setExistTermInList(false); //si existe no se añade y reseteo
   };
 
   /* 
@@ -47,11 +53,12 @@ const handlepageDown=()=>{
       }
     };
     listar(); // MANEJO FUNCION SIENDO ESTA ASINCRONA
+    //setTermFromSearchBar(); //NO ME GRABA TERMINO DE BUSQUEDA EN TERMLISTS SI RESETEO AQUI
   }, [dataYoutube]);
 
   return (
     <div className="videoListContainer">
-     {dataYoutube? <h2>Your search!</h2>:<h2>Search your videos</h2>}
+      {dataYoutube ? <h2>Your search!</h2> : <h2>Search your videos</h2>}
       <div className="videolist">
         {dataYoutube &&
           dataYoutube.map((item, i) => {

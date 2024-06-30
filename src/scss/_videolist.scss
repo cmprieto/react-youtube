@@ -1,7 +1,9 @@
 .videoListContainer {
     grid-area: main;
     background-color: #0f0f0f;
-    overflow: hidden;
+    //overflow: hidden;
+    @include flex-center;
+    flex-direction: column;
     border: 1px solid $color-blue;
     border-radius: 15px;
     padding: 1rem;
@@ -16,7 +18,8 @@
 .videolist {
     @include d-flex(space-around, center);
     background-color: #0f0f0f;
-    overflow: hidden;
+
+    flex-wrap: wrap;
 /*     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth; */

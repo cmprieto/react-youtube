@@ -5,10 +5,10 @@ import { useEffect } from "react";
 const GetYoutube = () => {
   const { setDataApiYoutube,setTermFromSearchBar, termFromSearchBar, page,setPage } = useUserContext();
 
-  /*   const API_KEY = "AIzaSyCqwMC8nrhsDfLP3jLfCcNBwPYAgj4SNOM"; */
+    const API_KEY = "AIzaSyCqwMC8nrhsDfLP3jLfCcNBwPYAgj4SNOM";
 
 /*   const API_KEY = "AIzaSyDOIgF-P8fWilqykKHvJkHsVFQbrWxWV-k"; */
-       const API_KEY = "AIzaSyAqmAXnlj9Sn6cNIAT-HpOC8LzjGClu8r0";  
+ /*       const API_KEY = "AIzaSyAqmAXnlj9Sn6cNIAT-HpOC8LzjGClu8r0";   */
 /*   if (page === "CAoQAA") {
     return upPage = "CAoQAA";
   }
@@ -21,7 +21,7 @@ console.log('upPage',upPage);
           .get("https://www.googleapis.com/youtube/v3/search?", {
             params: {
               part: "snippet",
-              maxResults: 5,
+              maxResults: 15,
               q: termFromSearchBar,
               key: API_KEY,
         /*       pageToken: page, */
@@ -36,7 +36,7 @@ console.log('upPage',upPage);
     };
     searcher();
     setPage(''); // RESETEAMOS PAGE PARA QUE CUANDO SE REPITA EL VALOR DE AVANZAR PG ACTÚE EL USEEFFECT. 
-
+   
   }, [termFromSearchBar, page ]);
 };
 export default GetYoutube;

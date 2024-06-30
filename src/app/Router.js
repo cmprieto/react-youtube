@@ -3,7 +3,6 @@ import Home from "../pages/Home";
 import History from "../pages/History";
 import Video_detail from "../pages/Video_detail";
 import Layout from "../components/Layout";
-import TermLists from "../components/TermLists";
 import VideoListFav from "../components/VideoListFav";
 import VideoListChannel from "../components/VideoListChannel";
 

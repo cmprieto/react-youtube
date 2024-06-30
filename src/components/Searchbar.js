@@ -1,22 +1,22 @@
 import { useState } from "react";
-import { useUserContext } from "../providers/UserProvider";
-import {useLocalStorageContext} from '../providers/LocalStorageContext';
+import { useLocalStorageContext } from "../providers/LocalStorageContext";
+import { useNavigate } from "react-router-dom";
 import lupa from "../assets/icon/buscar.png";
 
 const Searchbar = () => {
-  const { setTermFromSearchBar, setDataYoutube } = useUserContext();
-  const { LimitTermsList } = useLocalStorageContext();
-  const [texto, setTexto] = useState();
+
+  const { handleSubmitTermLists } =
+    useLocalStorageContext();
+  const [busqueda, setBusqueda] = useState();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setTexto(e.target.value);
+    setBusqueda(e.target.value);
   };
-
+  
   const handleSubmit = (e) => {
-    console.log("texto", texto);
-    setDataYoutube();
-    LimitTermsList();
-    setTermFromSearchBar(texto);
+    handleSubmitTermLists({ busqueda });
+    navigate("/react-youtube/videodetail/");
     e.preventDefault();
   };
 

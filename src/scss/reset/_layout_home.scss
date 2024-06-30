@@ -1,6 +1,7 @@
 .container--home {
     grid-area: main;
-    overflow: hidden;
+   /*  overflow-y: scroll;
+    scroll-behavior: smooth; */
     @include flex-center;
     flex-wrap: wrap;
 }

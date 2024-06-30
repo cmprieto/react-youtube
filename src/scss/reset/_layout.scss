@@ -5,12 +5,13 @@
   min-height: 100vh;
   margin: auto;
   background-color: $color-background;
-  overflow: hidden;
+  //overflow: hidden;
   display: grid;
   grid-template-columns:200px 1fr 1fr 1fr;
-  grid-template-rows: 0.1fr 2fr 1fr;
+  grid-template-rows: 0.1fr 2fr 1fr 1fr;
   grid-template-areas:
     "menu searchbar searchbar searchbar"
+    "menu main main main"
     "menu main main main"
     "menu main main main";
 }
