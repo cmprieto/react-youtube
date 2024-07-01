@@ -11,8 +11,9 @@ const UserProvider = ({ children }) => {
   const [favorito, setFavorito] = useLocalStorage("favoritos-youtube", []);
   const [channel, setChannel] = useState();
   const [listChannel, setListChannel] = useState();
-  const [page, setPage] = useState('CAUQAA');
-  const[channelInformation, setChannelInformation]=useState();
+  const [page, setPage] = useState("CAUQAA");
+  const [channelInformation, setChannelInformation] = useState();
+  const [i, setI] = useState(0);
 
   // HELPERS
 
@@ -30,17 +31,6 @@ const UserProvider = ({ children }) => {
     console.log("addIsFavoriteToAPI", addIsFavoriteToAPI);
     setDataYoutube(addIsFavoriteToAPI);
   };
-
-  /* const encodedItems = response.data.items.map(item => {
-    return {
-      ...item,
-      snippet: {
-        ...item.snippet,
-        title: decodeURIComponent(escape(item.snippet.title)),
-        description: decodeURIComponent(escape(item.snippet.description))
-      }
-    };
-  }); */
 
   useEffect(() => {
     setDataYoutube();
@@ -63,7 +53,9 @@ const UserProvider = ({ children }) => {
         page,
         setPage,
         channelInformation,
-        setChannelInformation
+        setChannelInformation,
+        i,
+        setI,
       }}
     >
       {children}
