@@ -4,6 +4,7 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import { Link } from "react-router-dom";
 import favo from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
+import he from 'he'; //para decodificar caracteres especiales en react
 
 const Result = ({ videotoShow }) => {
   const [favorito, setFavorito] = useLocalStorage("favoritos-youtube", []);
@@ -46,7 +47,7 @@ const Result = ({ videotoShow }) => {
 
       <div className="videodetail--videocontainer--subframe">
         <div className="videodetail--videocontainer--subframe--texto">
-          <h1>{videotoShow.snippet.title}</h1>
+          <h1>{he.decode(videotoShow.snippet.title)}</h1>  {/* decodificar caracteres especiales */}
 
           {/*  <p className="videodetail--videocontainer--subframe--texto--time"></p> */}
           <p className="videodetail--videocontainer--subframe--texto--channel">

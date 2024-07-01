@@ -9,8 +9,6 @@ const Home = () => {
   return (
     <Fragment>
       <div className="container--home">
-     {/*  <Searchbar/> */}
-        {/*       <VideoDetail /> */}
         <VideoList /> 
         <VideoListFav/>
         <TermLists/>

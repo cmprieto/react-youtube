@@ -7,6 +7,7 @@ import GetChannels from "./services/GetChannels";
 import GetChannelInformation from "./services/GetChannelInformation";
 import LocalStorageContext from "./providers/LocalStorageContext";
 
+
 const App = () => {
   return (
     <UserProvider>

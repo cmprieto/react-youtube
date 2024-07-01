@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import fav from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
 import { useUserContext } from "../providers/UserProvider";
+import he from 'he';//para decodificar caracteres especiales en react
 
 const VideoItem = ({ video }) => {
   const { setTermFromSearchBar } = useUserContext();
@@ -27,7 +28,7 @@ const VideoItem = ({ video }) => {
                 className="videoitem--thumbs"
                 alt="youtubethumbs"
               />
-              <p className="videoitem--title">{video.snippet.title}</p>
+              <p className="videoitem--title">{he.decode(video.snippet.title)}</p> {/* decodificar caracteres especiales */}
               <div className="videoitem--subtitle">
                 <p className="videoitem--subtitle--channeltitle">
                   {video.snippet.channelTitle}

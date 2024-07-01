@@ -1,11 +1,10 @@
 import Result from "./Result";
-import {useLocation, useParams} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import { useUserContext } from "../providers/UserProvider";
 
 const VideoDetail = () => {
   let { state } = useLocation();
   const { dataYoutube } = useUserContext();
- // const { id } = useParams();
   return (
     <div className="videodetail">
       <div className="videodetail--videocontainer">

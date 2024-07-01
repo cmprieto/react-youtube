@@ -31,7 +31,16 @@ const UserProvider = ({ children }) => {
     setDataYoutube(addIsFavoriteToAPI);
   };
 
-
+  /* const encodedItems = response.data.items.map(item => {
+    return {
+      ...item,
+      snippet: {
+        ...item.snippet,
+        title: decodeURIComponent(escape(item.snippet.title)),
+        description: decodeURIComponent(escape(item.snippet.description))
+      }
+    };
+  }); */
 
   useEffect(() => {
     setDataYoutube();
