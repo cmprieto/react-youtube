@@ -5,6 +5,7 @@ import Video_detail from "../pages/Video_detail";
 import Layout from "../components/Layout";
 import VideoListFav from "../components/VideoListFav";
 import VideoListChannel from "../components/VideoListChannel";
+import ChannelsVisited from "../components/ChannelsVisited";
 
 
 const Router = () => (
@@ -17,7 +18,7 @@ const Router = () => (
         <Route path="/react-youtube/videodetail/:id" element={<Video_detail/>} />
         <Route path="/react-youtube/history/" element={<History/>} />
         <Route path="/react-youtube/favorites/" element={<VideoListFav/>} />
-        <Route path="/react-youtube/channel/" element={<VideoListChannel/>} />
+        <Route path="/react-youtube/channel/" element={<ChannelsVisited/>} />
         <Route path="/react-youtube/channel/:id" element={<VideoListChannel/>} />
         {/* Es muy recomendable añadir esta ruta para obtener un mensaje de error en el caso de que la ruta no exista. De lo contrario, si la ruta no existe llegaremos a una página en blanco */}
         <Route path="/react-youtube/*" element={<div>error 404</div>} />

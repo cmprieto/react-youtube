@@ -19,9 +19,10 @@
         &--menu {
             @include d-flex(space-around, center);
             flex-direction: row;
-
+            width: 100%;
             &--button {
                 width: auto;
+                padding: 0 8px;
 
             }
         }
