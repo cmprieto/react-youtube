@@ -8,11 +8,11 @@ const ChannelsVisited = () => {
       <h1>Last Channels Visited</h1>
       <div className="channelContainer">
         {lastChannel &&
-          lastChannel.map(({ url, title,id }, ind) => {
-            if (ind < 14) {
+          lastChannel.map(({ url, title,id }, index) => {
+            if (index < 15) {
               return (
-                <Link to={`/react-youtube/channel/${id}`} className="channelContainer--link">
-                  <div className="channelContainer--list" key={'channel'+ind}>
+                <Link to={`/react-youtube/channel/${id}`} className="channelContainer--link" key={id}>
+                  <div className="channelContainer--list" >
                     <img
                       src={url}
                       alt="thumbs"
@@ -23,6 +23,7 @@ const ChannelsVisited = () => {
                 </Link>
               );
             }
+            return null;
           })}
       </div>
     </div>

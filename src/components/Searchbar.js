@@ -2,21 +2,22 @@ import { useState } from "react";
 import { useLocalStorageContext } from "../providers/LocalStorageContext";
 import { useNavigate } from "react-router-dom";
 import lupa from "../assets/icon/buscar.png";
+import { useUserContext } from "../providers/UserProvider";
 
 const Searchbar = () => {
-
-  const { handleSubmitTermLists } =
-    useLocalStorageContext();
+  const { setTermFromSearchBar } = useUserContext();
+  const { handleSubmitTermLists} = useLocalStorageContext();
   const [busqueda, setBusqueda] = useState();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setBusqueda(e.target.value);
   };
-  
+
   const handleSubmit = (e) => {
-    handleSubmitTermLists({ busqueda });
-    navigate("/react-youtube/videodetail/");
+    handleSubmitTermLists(busqueda); //MECANISMOS CONTROL
+    setTermFromSearchBar(busqueda);
+    navigate("/react-youtube/videodetail/"); 
     e.preventDefault();
   };
 

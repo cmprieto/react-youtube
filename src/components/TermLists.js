@@ -1,18 +1,37 @@
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useLocalStorageContext } from "../providers/LocalStorageContext";
-
+import { useUserContext } from "../providers/UserProvider";
 
 const TermLists = () => {
   const [busquedas] = useLocalStorage("react-youtube", []);
-  const { handleSubmitTermLists, } = useLocalStorageContext();
+  const { setDataYoutube, setTermFromSearchBar } = useUserContext();
+  const { existTermInList, setExistTermInList, LimitTermsList } = useLocalStorageContext();
+
   const navigate = useNavigate();
 
 
-const checkTerm=({busqueda})=>{
-  handleSubmitTermLists({ busqueda });
-  navigate("/react-youtube/videodetail/");
-}
+  const checkexistTerm = (busqueda) => {
+    //METODO SOME RESPONDE UN BOOLEANO SI SE CUMPLE UNA CONDICION
+    return busquedas.some((obj) => obj.busqueda === busqueda);
+  };
+
+
+  const handleSubmitTermLists2 = ({ busqueda }) => {
+    setTermFromSearchBar(busqueda); //volvemos a hacer la busqueda de term elegido
+    setExistTermInList(checkexistTerm(busqueda));
+    setDataYoutube(); //reseteo api
+    if (existTermInList === false) {
+      LimitTermsList(); //limita numero terms guardados
+    }
+  };
+
+
+
+  const checkTerm = ({ busqueda }) => {
+    handleSubmitTermLists2({ busqueda });
+    navigate("/react-youtube/videodetail/");
+  };
 
   return (
     <div className="term">
@@ -22,7 +41,7 @@ const checkTerm=({busqueda})=>{
           busquedas.map(({ busqueda, url }, indice) => {
             if (indice < 10) {
               return (
-                <div className="termContainer--list" key={indice}>
+                <div className="termContainer--list" key={"term" + indice}>
                   <img
                     src={url}
                     alt="thumbs"
@@ -39,6 +58,7 @@ const checkTerm=({busqueda})=>{
                 </div>
               );
             }
+            return null;
           })}
       </div>
     </div>
