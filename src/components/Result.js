@@ -9,7 +9,7 @@ import he from 'he'; //para decodificar caracteres especiales en react
 const Result = ({ videotoShow }) => {
   const [favorito, setFavorito] = useLocalStorage("favoritos-youtube", []);
   const VIDEO_ID = videotoShow.id.videoId;
-  const { setChannel } = useUserContext();
+  const { theme, setChannel } = useUserContext();
   const deleteFavLocalStorage = () => {
     // alert("BORRO FAVORITO");
     setFavorito(
@@ -47,10 +47,10 @@ const Result = ({ videotoShow }) => {
 
       <div className="videodetail--videocontainer--subframe">
         <div className="videodetail--videocontainer--subframe--texto">
-          <h1>{he.decode(videotoShow.snippet.title)}</h1>  {/* decodificar caracteres especiales */}
+          <h1 className={`videodetail--videocontainer--subframe--texto--title${theme}`}>{he.decode(videotoShow.snippet.title)}</h1>  {/* decodificar caracteres especiales */}
 
           {/*  <p className="videodetail--videocontainer--subframe--texto--time"></p> */}
-          <p className="videodetail--videocontainer--subframe--texto--channel">
+          <p className={`videodetail--videocontainer--subframe--texto--channel${theme}`}>
             published by{" "}
             <Link
               to={`/react-youtube/channel/${videotoShow.snippet.channelId}`}
@@ -60,7 +60,7 @@ const Result = ({ videotoShow }) => {
             </Link>{" "}
             in {new Date(videotoShow.snippet.publishTime).toLocaleDateString()}
           </p>
-          <p className="videodetail--videocontainer--subframe--texto--description">
+          <p className={`videodetail--videocontainer--subframe--texto--description${theme}`}>
             {videotoShow.snippet.description}
           </p>
         </div>
@@ -70,7 +70,7 @@ const Result = ({ videotoShow }) => {
           <img src={favo} alt="NoFavorito" onClick={handleFav} />
         )}
         {/*   <button onClick={handleChannel}>videos de canal</button>
-         */}{" "}
+         */}
       </div>
     </Fragment>
   );

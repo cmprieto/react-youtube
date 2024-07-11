@@ -25,6 +25,10 @@
                     font-size: 0.9rem;
                     font-weight: 400;
                     color: $color-channeltitletext;
+                    &--light{
+                        @extend .channelInfo--container--cabecera--title--description;
+                        color: $color-subtitletext--light;
+                    }
                 }
                 &>p {
                     font-size: 0.9rem;

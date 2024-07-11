@@ -14,6 +14,7 @@ const UserProvider = ({ children }) => {
   const [page, setPage] = useState("CAUQAA");
   const [channelInformation, setChannelInformation] = useState();
   const [i, setI] = useState(0);
+  const [theme, setTheme] = useState("");
 
   // HELPERS
 
@@ -56,6 +57,8 @@ const UserProvider = ({ children }) => {
         setChannelInformation,
         i,
         setI,
+        theme,
+        setTheme,
       }}
     >
       {children}

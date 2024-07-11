@@ -5,7 +5,10 @@
     @include d-flex(flex-start, center);
     flex-direction: column;
     /* margin: 1rem; */
-
+    &--light{
+        @extend .navbar;
+        background-color: $color-background--light;
+    }
     &--logo {
         width: 90px;
         height: auto;
@@ -26,6 +29,10 @@
             color: #f1f1f1;
             padding: 0 12px;
             height: 2.5rem;
+            &--light{
+                @extend .navbar--menu--button;
+                color: black;
+            }
 
             &:hover {
                 background-color: #5346464f;
@@ -51,3 +58,16 @@
     background-color: $color-dark-grey;
     border-radius: 15px;
 }  
+
+.switch-button{
+    background: $color-background--light;
+    border-radius: 20px;
+    width:2.5rem;
+    @include flex-center;
+    &>img{
+        max-width:2.5rem;
+    }
+    &:hover{
+        transform: scale(1.1);
+    }
+}

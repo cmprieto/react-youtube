@@ -24,7 +24,6 @@ const LocalStorageContext = ({ children }) => {
     if (channels) {
       channels = JSON.parse(channels);
       if (channels.length > 12) {
-        //  alert("voy a borrarrrrr");
         channels.splice(12, 1);
       }
       const updatedChannels = JSON.stringify(channels);
@@ -47,7 +46,7 @@ const LocalStorageContext = ({ children }) => {
       terms = JSON.parse(terms);
       console.log("Parsed terms:", terms);
       if (terms.length > 9) {
-        alert('voy a borrar 1 item de local storage');
+       // alert('voy a borrar 1 item de local storage');
         terms.splice(9, 1);
         console.log("After splicing:", terms); // Verificar el array modificado
       }
@@ -77,24 +76,24 @@ const LocalStorageContext = ({ children }) => {
 
     if (checkTerm === false) {
       LimitTermsList(); //limita numero terms guardados
-      alert("no existe en term list"); //METODO OK
+      //alert("no existe en term list"); //METODO OK
 
     } else {
-      alert("ya existe en term list"); //METODO OK
+      //alert("ya existe en term list"); //METODO OK
     }
   };
 
   const updates = (busqueda) => {
     if (existTermInList === false) {
       //sino existe se añade a localStorage
-      alert("sino existe se añade a localStorage");
+     // alert("sino existe se añade a localStorage");
      setNewObjectTerm({ busqueda: busqueda, url: urlthumb });
      console.log('newObjectTerm',newObjectTerm);
 
     } else {
       setExistTermInList(false);
       //si existe no se añade y reseteo
-      alert("TERM EXISTE Y NO SE AÑADE Y RESETEO setExistTermInList(false");
+      //alert("TERM EXISTE Y NO SE AÑADE Y RESETEO setExistTermInList(false");
     }
   };
 

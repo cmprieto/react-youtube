@@ -4,7 +4,7 @@ import VideoItem from "./VideoItem";
 
 
 const VideoList = () => {
-  const { dataYoutube, setTermFromSearchBar, setPage } =
+  const { dataYoutube, setTermFromSearchBar, setPage,theme } =
     useUserContext();
 
    /* 
@@ -26,9 +26,9 @@ const handlepageDown=()=>{
   }, [dataYoutube]);
 
   return (
-    <div className="videoListContainer">
+    <div className={`videoListContainer${theme}`}>
       {dataYoutube ? <h2>Your search!</h2> : <h2>Search your videos</h2>}
-      <div className="videolist">
+      <div className={`videolist${theme}`}>
         {dataYoutube &&
           dataYoutube.map((item, i) => {
             return (

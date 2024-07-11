@@ -1,9 +1,9 @@
 .container {
   font-size: 16px;
   font-family: $project-font;
-  color: $color-titletext;
   min-height: 100vh;
   margin: auto;
+  color: $color-titletext;
   background-color: $color-background;
  // overflow-y: scroll;
   display: grid;
@@ -14,4 +14,10 @@
     "menu main main main"
     "menu main main main"
     "menu main main main";
+    
+    &--light{
+      @extend .container;
+      background-color: $color-background--light;
+      color: $color-titletext--light;
+    }
 }

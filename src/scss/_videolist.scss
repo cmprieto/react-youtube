@@ -13,6 +13,11 @@
         text-align: center;
         text-transform: uppercase;
     }
+    &--light{
+        @extend .videoListContainer;
+        background-color: $color-background--light;
+       // color: $color-titletext--light;
+      }
 }
 
 
@@ -24,6 +29,11 @@
 /*     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth; */
+    &--light{
+        @extend .videolist;
+        background-color: $color-background--light;
+       // color: $color-titletext--light;
+      }
 }
 
 .videolistFavContainer {
@@ -36,6 +46,11 @@
     padding: 1rem;
     margin: 1rem 0.5rem;
     max-width: 100%;
+    // hay un FALLO SE DEFINE BACKGROUND EN OTRO PUNTO PQ NO SE MACHACA VALOR?
+    &--light{
+        @extend .videolistFavContainer;
+        background-color: $color-background--light;
+    }
     &>h2 {
         text-align: center;
     }
@@ -43,7 +58,11 @@
     &--videos {
         @include d-flex(space-around, center);
         flex-wrap: wrap;
-        background-color: #0f0f0f;
+        background-color: $color-background;
+        &--light{
+            @extend .videolistFavContainer--videos;
+            background-color: $color-background--light;
+        }
     }
 }
 
@@ -82,6 +101,11 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        &--light{
+            @extend .videoitem--title;
+           // background-color: $color-background--light;
+            color: $color-titletext--light;
+          }
 
     }
 
@@ -103,6 +127,11 @@
             overflow: hidden;
             white-space: nowrap;
             color: #AAAAAA;
+            &--light{
+                @extend .videoitem--subtitle--channeltitle;
+               // background-color: $color-background--light;
+                color: $color-subtitletext--light;
+              }
         }
     }
 }

@@ -1,17 +1,19 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { Link } from "react-router-dom";
+import {useUserContext} from '../providers/UserProvider';
 
 const ChannelsVisited = () => {
   const [lastChannel] = useLocalStorage("channels-react-youtube", []);
+  const { theme } = useUserContext();
   return (
     <div className="channel">
       <h1>Last Channels Visited</h1>
-      <div className="channelContainer">
+      <div className={`channelContainer${theme}`}>
         {lastChannel &&
           lastChannel.map(({ url, title,id }, index) => {
             if (index < 15) {
               return (
-                <Link to={`/react-youtube/channel/${id}`} className="channelContainer--link" key={id}>
+                <Link to={`/react-youtube/channel/${id}`} className={`channelContainer--link${theme}`} key={id}>
                   <div className="channelContainer--list" >
                     <img
                       src={url}

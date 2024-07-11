@@ -23,10 +23,25 @@
     outline: none;
     background: $color-background;
     color: #f5f5f5eb;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+    &--light {
+        @extend .searchTerm;
+        border: 3px solid $color-background;
+        background: $color-background--light;
+        //    color: $color-titletext--light;
+
+    }
 }
+
 
 .searchTerm:focus {
     color: white;
+    border: 2px solid $color-blue;
+}
+
+.searchTerm--light:focus {
+    color: $color-background;
     border: 2px solid $color-blue;
 }
 
@@ -41,6 +56,12 @@
     cursor: pointer;
     font-size: 1rem;
     @include flex-center;
+
+    &--light {
+        @extend .searchButton;
+        border: 1px solid $color-background;
+        background: $color-background;
+    }
 
     &--lupa {
         width: 1rem;

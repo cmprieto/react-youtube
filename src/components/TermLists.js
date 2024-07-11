@@ -5,7 +5,7 @@ import { useUserContext } from "../providers/UserProvider";
 
 const TermLists = () => {
   const [busquedas] = useLocalStorage("react-youtube", []);
-  const { setDataYoutube, setTermFromSearchBar } = useUserContext();
+  const { setDataYoutube, setTermFromSearchBar,theme } = useUserContext();
   const { existTermInList, setExistTermInList, LimitTermsList } = useLocalStorageContext();
 
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const TermLists = () => {
   return (
     <div className="term">
       <h1>Last searches</h1>
-      <div className="termContainer">
+      <div className={`termContainer${theme}`}>
         {busquedas &&
           busquedas.map(({ busqueda, url }, indice) => {
             if (indice < 10) {

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import fav from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
 import he from 'he';      //para decodificar caracteres especiales en react
+import {useUserContext} from '../providers/UserProvider';
 
 const VideoItem = ({ video }) => {
-
-
+  const { theme } = useUserContext();
 
   return (
     <Fragment>
@@ -24,12 +24,12 @@ const VideoItem = ({ video }) => {
                 className="videoitem--thumbs"
                 alt="youtubethumbs"
               />
-              <p className="videoitem--title">{he.decode(video.snippet.title)}</p> {/* decodificar caracteres especiales */}
+              <p className={`videoitem--title${theme}`}>{video.snippet.title&&he.decode(video.snippet.title)}</p> {/* decodificar caracteres especiales */}
               <div className="videoitem--subtitle">
-                <p className="videoitem--subtitle--channeltitle">
+                <p className={`videoitem--subtitle--channeltitle${theme}`}>
                   {video.snippet.channelTitle}
                 </p>
-                <p className="videoitem--subtitle--channeltitle">
+                <p className={`videoitem--subtitle--channeltitle${theme}`}>
                   {new Date(video.snippet.publishTime).toLocaleDateString()}
                 </p>
                 {video.isFavorite ? (

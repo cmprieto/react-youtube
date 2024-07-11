@@ -7,6 +7,11 @@
   height: 60%; //CAMBIO DE LAYOUT A FLEX EN container--videodetail
   width: 100%; //CAMBIO DE LAYOUT A FLEX EN container--videodetail
 
+  &--light {
+    @extend .videodetail;
+    background-color: $color-background--light;
+  }
+
   &--videocontainer {
     grid-row: 1/3;
     grid-column: 1/3;
@@ -18,7 +23,6 @@
     /*          aspect-ratio: 16 / 9;
          background-color: #f26565; */
     /*       padding-top: 56.25%; */
-
     @include d-flex(flex-start, center);
     flex-direction: column;
 
@@ -32,21 +36,24 @@
     &--subframe {
       border-radius: 15px;
       padding: 10px;
-    //  background-color: $color-dark-grey;
+      //  background-color: $color-dark-grey;
       width: 100%;
       @include d-flex(space-around, center);
-     /*  border-left: 1px solid red;
-      border-right: 1px solid red; */
 
       &--texto {
         font-weight: 500;
         text-align: justify;
 
-        &>h1 {
+        &--title {
           font-size: 1.1rem;
           color: $color-titletext;
           line-height: 1.8rem;
           text-transform: uppercase;
+          &--light {
+            @extend .videodetail--videocontainer--subframe--texto--title;
+            //background-color: $color-background--light;
+            color: $color-titletext--light;
+          }
         }
 
         &--description {
@@ -54,6 +61,12 @@
           line-height: 1.1rem;
           color: $color-channeltitletext;
           margin-top: 0.8rem;
+
+          &--light {
+            @extend .videodetail--videocontainer--subframe--texto--description;
+            //background-color: $color-background--light;
+            color: $color-titletext--light;
+          }
         }
 
         &--channel {
@@ -64,8 +77,15 @@
 
           &--link {
             text-decoration: none;
-            color:red;
+            color: red;
           }
+
+          &--light {
+            @extend .videodetail--videocontainer--subframe--texto--channel;
+            //background-color: $color-background--light;
+            color: $color-titletext--light;
+          }
+
         }
       }
 

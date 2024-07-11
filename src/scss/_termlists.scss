@@ -20,6 +20,10 @@
     background-color: $color-dark-grey;
     border-radius: 15px;
     flex-wrap: wrap;
+    &--light{
+        @extend .termContainer;
+        background-color: $color-light-grey;
+    }
 
     &--list {
         @include d-flex(space-between, center);

@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import lupa from "../assets/icon/buscar.png";
 import { useUserContext } from "../providers/UserProvider";
 
+
 const Searchbar = () => {
-  const { setTermFromSearchBar } = useUserContext();
+  const { setTermFromSearchBar,theme } = useUserContext();
   const { handleSubmitTermLists} = useLocalStorageContext();
   const [busqueda, setBusqueda] = useState();
   const navigate = useNavigate();
@@ -31,15 +32,16 @@ const Searchbar = () => {
       >
         <input
           type="search"
-          className="searchTerm"
+          className={`searchTerm${theme}`}
           placeholder="Search"
           onChange={handleChange}
           id="inputbuscador"
         />
-        <button type="submit" className="searchButton">
+        <button type="submit" className={`searchButton${theme}`}>
           <img src={lupa} alt="lupa" className="searchButton--lupa" />
         </button>
       </form>
+
     </div>
   );
 };
