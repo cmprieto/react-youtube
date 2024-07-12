@@ -2,12 +2,13 @@
     .container {
         min-height: 100vh;
         grid-template-columns: 180px 1fr 1fr;
-        grid-template-rows: 125px 60px 80% auto;
+        grid-template-rows: 125px 60px 80% auto 40px;
         grid-template-areas:
             " menu menu menu"
             "searchbar searchbar searchbar"
             " main main main"
-            " main main main";
+            " main main main"
+            "footer footer footer";
         /*      overflow-y: scroll;
         overflow-x: hidden; */
     }
@@ -15,26 +16,31 @@
     .navbar {
         flex-direction: column;
         justify-content: space-around;
-
         &--menu {
             @include d-flex(space-around, center);
             flex-direction: row;
             width: 100%;
+
+
             &--button {
                 width: auto;
                 padding: 0 8px;
+
                 &--hidden {
                     display: none;
-                    &--light{
+
+                    &--light {
                         display: none;
                     }
                 }
 
             }
-            &--separador{
+
+            &--separador {
                 display: none;
             }
-            &--icon{
+
+            &--icon {
                 display: none;
             }
         }
@@ -56,6 +62,7 @@
     .videodetail {
         grid-template-rows: 500px;
         height: auto;
+
         &--videocontainer {
             width: 100%;
 
@@ -98,16 +105,21 @@
 
     .termContainer {
         margin: 1rem 0rem;
-
+        padding: 0.5rem;
         &--list {
             width: auto;
-
+            height: 160px;
             &--img {
                 width: 90px;
             }
 
             &--text {
-                font-size: 0.8rem;
+                max-width: 90px;
+                font-size: 0.7rem;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                
             }
 
             &--button {
@@ -139,9 +151,16 @@
 
         &--cabecera--title {
             margin-left: 0rem;
+
             &>h1 {
                 font-size: 1.5rem;
             }
+        }
+    }
+
+    .bottomMenuContainer {
+        &--button {
+            width: auto;
         }
     }
 }

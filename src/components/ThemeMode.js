@@ -14,6 +14,7 @@ const ThemeMode = () => {
     {theme==='--light'? <img src={dia} onClick={handleTheme} alt='dia'></img>: <img src={noche} onClick={handleTheme} alt='noche' ></img>}
 
 
+
     {/* Botón  */}</div>
   );
 };
