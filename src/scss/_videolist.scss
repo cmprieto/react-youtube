@@ -4,11 +4,12 @@
     //overflow: hidden;
     @include flex-center;
     flex-direction: column;
-    border: 1px solid $color-blue;
+  //  border: 1px solid $color-blue;
     border-radius: 15px;
     padding: 1rem;
     margin: 1rem 0.5rem;
     max-width: 100%;
+    box-shadow: #89898984 0px 0.0625em 0.0625em, #1b1b1b40 0px 0.125em 1em;
     &>h2 {
         text-align: center;
         text-transform: uppercase;
@@ -16,6 +17,7 @@
     &--light{
         @extend .videoListContainer;
         background-color: $color-background--light;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
        // color: $color-titletext--light;
       }
 }
@@ -26,6 +28,7 @@
     background-color: #0f0f0f;
     max-width: 100%;
     flex-wrap: wrap;
+    
 /*     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth; */
@@ -33,6 +36,7 @@
         @extend .videolist;
         background-color: $color-background--light;
        // color: $color-titletext--light;
+       
       }
 }
 
@@ -41,15 +45,18 @@
     //  @include d-flex(space-around, center);
     //flex-wrap: wrap;
    // overflow: scroll;
-    border: 1px solid $color-blue;
+   //background-color: green;
+    //border: 1px solid $color-blue;
     border-radius: 15px;
     padding: 1rem;
     margin: 1rem 0.5rem;
     max-width: 100%;
+    box-shadow: #89898984 0px 0.0625em 0.0625em, #1b1b1b40 0px 0.125em 1em; 
     // hay un FALLO SE DEFINE BACKGROUND EN OTRO PUNTO PQ NO SE MACHACA VALOR?
     &--light{
         @extend .videolistFavContainer;
         background-color: $color-background--light;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     }
     &>h2 {
         text-align: center;
@@ -58,7 +65,9 @@
     &--videos {
         @include d-flex(space-around, center);
         flex-wrap: wrap;
-        background-color: $color-background;
+        //background-color: $color-background;
+        //background: orange;
+        
         &--light{
             @extend .videolistFavContainer--videos;
             background-color: $color-background--light;
@@ -101,6 +110,7 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        margin-top: 0.6rem;
         &--light{
             @extend .videoitem--title;
            // background-color: $color-background--light;

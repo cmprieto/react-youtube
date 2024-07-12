@@ -7,7 +7,7 @@
   background-color: $color-background;
  // overflow-y: scroll;
   display: grid;
-  grid-template-columns: 200px 1fr 1fr 1fr;
+  grid-template-columns: 190px 1fr 1fr 1fr;
   grid-template-rows: 0.1fr 2fr 2fr auto;
   grid-template-areas:
     "menu searchbar searchbar searchbar"

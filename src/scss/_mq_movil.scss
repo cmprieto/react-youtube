@@ -23,10 +23,24 @@
             &--button {
                 width: auto;
                 padding: 0 8px;
+                &--hidden {
+                    display: none;
+                    &--light{
+                        display: none;
+                    }
+                }
 
+            }
+            &--separador{
+                display: none;
+            }
+            &--icon{
+                display: none;
             }
         }
     }
+
+
 
     .searchbar {
         //  margin: 0rem 0.5rem ;
@@ -42,7 +56,6 @@
     .videodetail {
         grid-template-rows: 500px;
         height: auto;
-
         &--videocontainer {
             width: 100%;
 
@@ -79,7 +92,7 @@
     }
 
     .videoitem {
-        max-width: 80%;
+        max-width: 100%;
     }
 
 
@@ -125,6 +138,7 @@
         }
 
         &--cabecera--title {
+            margin-left: 0rem;
             &>h1 {
                 font-size: 1.5rem;
             }

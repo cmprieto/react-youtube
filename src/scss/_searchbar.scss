@@ -29,7 +29,8 @@
         @extend .searchTerm;
         border: 3px solid $color-background;
         background: $color-background--light;
-        //    color: $color-titletext--light;
+        background: $color-background--light;
+        color: $color-titletext--light;
 
     }
 }

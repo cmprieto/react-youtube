@@ -1,0 +1,60 @@
+.bottomMenuContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-height: 40px;
+    border-top: 1px solid $color-background--light;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: $color-background;
+
+    &--light {
+        @extend .bottomMenuContainer;
+        background: $color-background--light;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        border-top: 1px solid $color-background;
+    }
+
+    &--button {
+        width: 180px;
+        padding: 0.5rem;
+        border-radius: 10px;
+        border: 0px;
+        background-color: transparent;
+        color: #f1f1f1;
+        padding: 0 12px;
+        height: 2.5rem;
+
+        &--light {
+            @extend .navbar--menu--button;
+            color: black;
+        }
+
+        &:hover {
+            background-color: #5346464f;
+        }
+
+        &:active {
+            background-color: #f1f1f1;
+            color: $color-dark-grey;
+            color: #0f0f0f;
+        }
+
+        &>p {
+            font-family: $project-font;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        &--light {
+            @extend .bottomMenuContainer--button--light;
+
+            >p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

@@ -28,7 +28,7 @@ const NavBar = () => {
         </NavLink>
         <NavLink to="/react-youtube/channel/">
           <button className={`navbar--menu--button${theme}`}>
-            <p>Channel</p>
+            <p>Channels</p>
           </button>
         </NavLink>
         <NavLink to="/react-youtube/favorites/">
@@ -36,14 +36,15 @@ const NavBar = () => {
             <p>Favorites</p>
           </button>
         </NavLink>
+        <div className={`navbar--menu--separador${theme}`}></div>
         <button
           type="button"
-          className={`navbar--menu--button${theme}`}
+          className={`navbar--menu--button--hidden${theme}`}
           onClick={handleKey}
         >
-          <p>Reset Key</p>
+          <p>Key Changer</p>
         </button>
-        <ThemeMode/>
+        <div className="navbar--menu--icon"><ThemeMode/></div>
       </div>
     </div>
   );
