@@ -1,6 +1,7 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { Link } from "react-router-dom";
 import {useUserContext} from '../providers/UserProvider';
+import ProfileSkeleton from '../assets/skeleton/ProfileSkeleton';
 
 const ChannelsVisited = () => {
   const [lastChannel] = useLocalStorage("channels-react-youtube", []);
@@ -9,7 +10,7 @@ const ChannelsVisited = () => {
     <div className="channel">
       <h1>Last Channels Visited</h1>
       <div className={`channelContainer${theme}`}>
-        {lastChannel &&
+        {lastChannel[0] ?
           lastChannel.map(({ url, title,id }, index) => {
             if (index < 15) {
               return (
@@ -26,7 +27,7 @@ const ChannelsVisited = () => {
               );
             }
             return null;
-          })}
+          }):<ProfileSkeleton/>}
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useLocalStorageContext } from "../providers/LocalStorageContext";
 import { useUserContext } from "../providers/UserProvider";
+import ListTermSkeleton from "../assets/skeleton/ListTermSkeleton";
+
 
 const TermLists = () => {
   const [busquedas] = useLocalStorage("react-youtube", []);
@@ -37,7 +39,7 @@ const TermLists = () => {
     <div className="term">
       <h1>Last searches</h1>
       <div className={`termContainer${theme}`}>
-        {busquedas &&
+        {busquedas[0]?
           busquedas.map(({ busqueda, url }, indice) => {
             if (indice < 10) {
               return (
@@ -59,7 +61,7 @@ const TermLists = () => {
               );
             }
             return null;
-          })}
+          }):<ListTermSkeleton/>}
       </div>
     </div>
   );

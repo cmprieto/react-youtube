@@ -4,6 +4,7 @@ import { useUserContext } from "../providers/UserProvider";
 import VideoListChannelInformation from "./VideoListChannelInformation";
 import VideoItem from "./VideoItem";
 
+
 const VideoListChannel = () => {
   const { id } = useParams();
   const {

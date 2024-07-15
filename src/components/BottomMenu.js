@@ -16,7 +16,7 @@ const BottomMenu = () => {
   return (
     <div className={`bottomMenuContainer${theme}`}>
       {" "}
-      <p>©2024.Carlos Prieto</p>
+      <p>©2024 Carlos Prieto</p>
       <button
         type="button"
         className={`bottomMenuContainer--button${theme}`}

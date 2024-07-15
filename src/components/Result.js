@@ -4,7 +4,7 @@ import { useLocalStorage } from "@uidotdev/usehooks";
 import { Link } from "react-router-dom";
 import favo from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
-import he from 'he'; //para decodificar caracteres especiales en react
+import he from "he"; //para decodificar caracteres especiales en react
 
 const Result = ({ videotoShow }) => {
   const [favorito, setFavorito] = useLocalStorage("favoritos-youtube", []);
@@ -36,21 +36,29 @@ const Result = ({ videotoShow }) => {
 
   return (
     <Fragment>
-      <iframe
-        id="player"
-        type="text/html"
-        className="videodetail--videocontainer--iframe"
-        allowFullScreen
-        src={`https://www.youtube.com/embed/${VIDEO_ID}`}
-        frameborder="0"
-      ></iframe>
+      {videotoShow && (
+       <iframe
+       id="player"
+       type="text/html"
+       className="videodetail--videocontainer--iframe"
+       allowFullScreen
+       src={`https://www.youtube.com/embed/${VIDEO_ID}`}
+       frameborder="0"
+     ></iframe>
+      )} 
 
       <div className="videodetail--videocontainer--subframe">
         <div className="videodetail--videocontainer--subframe--texto">
-          <h1 className={`videodetail--videocontainer--subframe--texto--title${theme}`}>{he.decode(videotoShow.snippet.title)}</h1>  {/* decodificar caracteres especiales */}
-
+          <h1
+            className={`videodetail--videocontainer--subframe--texto--title${theme}`}
+          >
+            {he.decode(videotoShow.snippet.title)}
+          </h1>{" "}
+          {/* decodificar caracteres especiales */}
           {/*  <p className="videodetail--videocontainer--subframe--texto--time"></p> */}
-          <p className={`videodetail--videocontainer--subframe--texto--channel${theme}`}>
+          <p
+            className={`videodetail--videocontainer--subframe--texto--channel${theme}`}
+          >
             published by{" "}
             <Link
               to={`/react-youtube/channel/${videotoShow.snippet.channelId}`}
@@ -60,7 +68,9 @@ const Result = ({ videotoShow }) => {
             </Link>{" "}
             in {new Date(videotoShow.snippet.publishTime).toLocaleDateString()}
           </p>
-          <p className={`videodetail--videocontainer--subframe--texto--description${theme}`}>
+          <p
+            className={`videodetail--videocontainer--subframe--texto--description${theme}`}
+          >
             {videotoShow.snippet.description}
           </p>
         </div>

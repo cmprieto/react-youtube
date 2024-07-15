@@ -10,7 +10,7 @@
   &--light {
     @extend .videodetail;
     background-color: $color-background--light;
-    
+
   }
 
   &--videocontainer {
@@ -51,6 +51,7 @@
           color: $color-titletext;
           line-height: 1.8rem;
           text-transform: uppercase;
+
           &--light {
             @extend .videodetail--videocontainer--subframe--texto--title;
             //background-color: $color-background--light;
@@ -68,7 +69,7 @@
             @extend .videodetail--videocontainer--subframe--texto--description;
             //background-color: $color-background--light;
             color: $color-titletext--light;
-    
+
           }
         }
 

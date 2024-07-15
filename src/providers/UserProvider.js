@@ -6,6 +6,7 @@ export const useUserContext = () => useContext(AppContext);
 
 const UserProvider = ({ children }) => {
   const [dataApiYoutube, setDataApiYoutube] = useState();
+  const [getRecommended, setGetRecommended] = useState();
   const [dataYoutube, setDataYoutube] = useState(); // añado nuevo estado donde incluyo datos extraidos de API y añado estado isFavorite como booleano
   const [termFromSearchBar, setTermFromSearchBar] = useState("");
   const [favorito, setFavorito] = useLocalStorage("favoritos-youtube", []);
@@ -59,6 +60,8 @@ const UserProvider = ({ children }) => {
         setI,
         theme,
         setTheme,
+        getRecommended,
+        setGetRecommended
       }}
     >
       {children}
