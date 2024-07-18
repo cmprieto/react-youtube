@@ -1,0 +1,26 @@
+.profile {
+    @include d-flex(space-around, center);
+    flex-direction: row;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: $color-dark-grey;
+    border-radius: 15px;
+    flex-wrap: wrap;
+    box-shadow: #89898984 0px 0.0625em 0.0625em, #1b1b1b40 0px 0.125em 1em;
+
+    &--light {
+        @extend .profile;
+        background-color: $color-light-grey;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    }
+
+    &--profile {
+        @include d-flex(center, flex-start);
+        flex-direction: column;
+        margin:2rem;
+        &--light {
+            @extend .profile--profile;
+        }
+    }
+
+}

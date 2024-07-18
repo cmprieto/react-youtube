@@ -1,12 +1,11 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Searchbar from "./Searchbar";
-import {useUserContext} from '../providers/UserProvider';
 import BottomMenu from "../components/BottomMenu";
+import {useLocalStorage} from '@uidotdev/usehooks';
 
 const Layout = () => {
-  const {theme}=useUserContext();
-  
+  const [theme] = useLocalStorage("theme","");
   return (
     <div className={`container${theme}`}>
       <NavBar />

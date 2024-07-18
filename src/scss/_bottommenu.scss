@@ -23,6 +23,7 @@
     }
     &>img{
         max-width: 33px;
+        cursor: pointer;
         &:hover{
             transform: scale(1.1);
         }

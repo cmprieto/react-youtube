@@ -7,7 +7,8 @@ import ListTermSkeleton from "../assets/skeleton/ListTermSkeleton";
 
 const TermLists = () => {
   const [busquedas] = useLocalStorage("react-youtube", []);
-  const { setDataYoutube, setTermFromSearchBar,theme } = useUserContext();
+  const { setDataYoutube, setTermFromSearchBar } = useUserContext();
+  const [theme] = useLocalStorage("theme","");
   const { existTermInList, setExistTermInList, LimitTermsList } = useLocalStorageContext();
 
   const navigate = useNavigate();

@@ -1,10 +1,9 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
-import { useUserContext } from "../providers/UserProvider";
 import VideoItem from "./VideoItem";
 import YoutubeListSkeleton from "../assets/skeleton/YoutubeListSkeleton";
 
 const VideoListFav = () => {  
-  const { theme } = useUserContext();
+  const [theme] = useLocalStorage("theme","");
   const [favorito] = useLocalStorage("favoritos-youtube", []);
   return (
     <div className={`videolistFavContainer${theme}`}>

@@ -16,6 +16,7 @@ const VideoListChannel = () => {
   setChannel(id);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setChannel(id);
   }, []);
 

@@ -9,7 +9,8 @@ import he from "he"; //para decodificar caracteres especiales en react
 const Result = ({ videotoShow }) => {
   const [favorito, setFavorito] = useLocalStorage("favoritos-youtube", []);
   const VIDEO_ID = videotoShow.id.videoId;
-  const { theme, setChannel } = useUserContext();
+  const {  setChannel } = useUserContext();
+  const [theme] = useLocalStorage("theme","");
   const deleteFavLocalStorage = () => {
     // alert("BORRO FAVORITO");
     setFavorito(

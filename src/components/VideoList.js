@@ -2,12 +2,13 @@ import { useUserContext } from "../providers/UserProvider";
 import { useEffect } from "react";
 import VideoItem from "./VideoItem";
 import YoutubeListSkeleton from "../assets/skeleton/YoutubeListSkeleton";
+import {useLocalStorage} from '@uidotdev/usehooks';
 
 
 const VideoList = () => {
-  const { dataYoutube, setTermFromSearchBar, setPage,theme } =
+  const { dataYoutube, setTermFromSearchBar, setPage } =
     useUserContext();
-
+    const [theme] = useLocalStorage("theme","");
    /* 
 const handlepageUp=()=>{
   setPage((prevState)=>{

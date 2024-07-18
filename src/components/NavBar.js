@@ -2,10 +2,11 @@ import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import { useUserContext } from "../providers/UserProvider";
 import ThemeMode from './ThemeMode';
+import {useLocalStorage} from '@uidotdev/usehooks';
 
 const NavBar = () => {
-  const { i,setI,theme } = useUserContext();
-
+  const { i,setI } = useUserContext();
+  const [theme] = useLocalStorage("theme","");
   const handleKey = () => {
     i < 2 ? setI((prevState) => prevState + 1) : setI(0);
   };
@@ -37,6 +38,12 @@ const NavBar = () => {
           </button>
         </NavLink>
         <div className={`navbar--menu--separador${theme}`}></div>
+        <NavLink to="/react-youtube/profile/">
+          <button className={`navbar--menu--button${theme}`}>
+            <p>Profile</p>
+          </button>
+        </NavLink>
+        
         <button
           type="button"
           className={`navbar--menu--button--hidden${theme}`}

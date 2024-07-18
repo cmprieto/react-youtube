@@ -1,7 +1,6 @@
 import { useLocalStorage } from "@uidotdev/usehooks";
 import { useEffect } from "react";
 import {useLocalStorageContext} from '../providers/LocalStorageContext';
-import {useUserContext} from '../providers/UserProvider';
 
 const VideoListChannelInformation = ({ information }) => {
   const [lastChannel, setLastChannel] = useLocalStorage(
@@ -9,7 +8,8 @@ const VideoListChannelInformation = ({ information }) => {
     []
   );
   const { LimitArrayChannelsFav } = useLocalStorageContext();
-  const { theme } =  useUserContext();
+  //const { theme } =  useUserContext();
+  const [theme] = useLocalStorage("theme","");
   //PONER UNA FUNCION REVISE SI EL CANAL VISITADO ESTÁ EN EL HISTORIAL CON METODO SOME
 
   let nombreCanal = "";

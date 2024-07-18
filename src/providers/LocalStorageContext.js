@@ -9,14 +9,12 @@ const LocalStorageContext = ({ children }) => {
   //ESTADOS
   const [existTermInList, setExistTermInList] = useState(false);
   const [busquedas] = useLocalStorage("react-youtube", []);
-  const { setDataYoutube } =
-    useUserContext();
+  const { setDataYoutube } = useUserContext();
   const [urlthumb, setUrlthumb] = useState("");
   const [newObjectTerm, setNewObjectTerm] = useState();
-
+  const [theme, setTheme] = useLocalStorage("theme","");
   //METODOS DEL LOCALSTORAGE
 
- 
   // METODO LIMITAR NUMERO DE ITEMS EN CHANNELS VISITED A 12 y poder GRABAR NUEVOS
 
   const LimitArrayChannelsFav = () => {
@@ -36,17 +34,16 @@ const LocalStorageContext = ({ children }) => {
     }
   };
 
+  //LIMITAMOS ARRAY A 10 EN LOCALSTORAGE DE TERMS BUSCADOS EN YOUTUBE
 
-   //LIMITAMOS ARRAY A 10 EN LOCALSTORAGE DE TERMS BUSCADOS EN YOUTUBE
-
-   const LimitTermsList = () => {
+  const LimitTermsList = () => {
     let terms = localStorage.getItem("react-youtube");
     console.log("Before modification:", terms); //LIMITAMOS ARRAY A 10 EN LOCALSTORAGE
     if (terms) {
       terms = JSON.parse(terms);
       console.log("Parsed terms:", terms);
       if (terms.length > 9) {
-       // alert('voy a borrar 1 item de local storage');
+        // alert('voy a borrar 1 item de local storage');
         terms.splice(9, 1);
         console.log("After splicing:", terms); // Verificar el array modificado
       }
@@ -57,7 +54,6 @@ const LocalStorageContext = ({ children }) => {
       console.log("No hay datos almacenados bajo la clave 'react-youtube'");
     }
   };
-
 
   //METODOS CONTROL REPETICION TERMLISTS PALABRAS DE BUSQUEDA, NO SE REPITA
 
@@ -77,7 +73,6 @@ const LocalStorageContext = ({ children }) => {
     if (checkTerm === false) {
       LimitTermsList(); //limita numero terms guardados
       //alert("no existe en term list"); //METODO OK
-
     } else {
       //alert("ya existe en term list"); //METODO OK
     }
@@ -86,10 +81,9 @@ const LocalStorageContext = ({ children }) => {
   const updates = (busqueda) => {
     if (existTermInList === false) {
       //sino existe se añade a localStorage
-     // alert("sino existe se añade a localStorage");
-     setNewObjectTerm({ busqueda: busqueda, url: urlthumb });
-     console.log('newObjectTerm',newObjectTerm);
-
+      // alert("sino existe se añade a localStorage");
+      setNewObjectTerm({ busqueda: busqueda, url: urlthumb });
+      console.log("newObjectTerm", newObjectTerm);
     } else {
       setExistTermInList(false);
       //si existe no se añade y reseteo
@@ -108,6 +102,8 @@ const LocalStorageContext = ({ children }) => {
         urlthumb,
         setUrlthumb,
         updates,
+        theme,
+        setTheme,
       }}
     >
       {children}

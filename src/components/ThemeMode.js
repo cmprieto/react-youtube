@@ -1,9 +1,9 @@
-import {useUserContext} from '../providers/UserProvider';
 import dia from "../assets/icon/dia.png";
 import noche from "../assets/icon/noche.png";
+import {useLocalStorage} from '@uidotdev/usehooks';
 
 const ThemeMode = () => {
-    const {theme, setTheme}=useUserContext();
+    const [theme,setTheme] = useLocalStorage("theme","");
     const handleTheme=()=>{
         setTheme(theme==='--light'?'':'--light');
     }

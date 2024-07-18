@@ -1,0 +1,65 @@
+.loginButton {
+    background-color: $color-background--light;
+    border-radius: 25px;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.loginButton--noAuth{
+    @include d-flex( space-around,center);
+    flex-direction: row;
+    min-width: 20%; 
+    &--white{
+        @extend .loginButton--noAuth;
+    }
+}
+
+.loginButtonisAuth {
+    @include d-flex( space-around,center);
+    flex-direction: row;
+    min-width: 20%;
+    &>img {
+        width: 2.5rem;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    &--button{
+        width: 120px;
+        padding: 0.5rem;
+        border-radius: 10px;
+        border: 0px;
+        background-color: transparent;
+        color: #f1f1f1;
+        padding: 0 12px;
+        height: 2.5rem;
+
+        &--light {
+            @extend .loginButtonisAuth--button;
+            color: black;
+        }
+
+        &:hover {
+            background-color: #5346464f;
+        }
+
+        &:active {
+            background-color: #f1f1f1;
+            color: $color-dark-grey;
+            color: #0f0f0f;
+        }
+
+        &>p {
+            font-family: $project-font;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        &--light {
+            @extend .loginButtonisAuth--button--light;
+
+            >p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

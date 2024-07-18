@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import fav from "../assets/icon/fav.png";
 import favSelected from "../assets/icon/fav--selected.png";
 import he from 'he';      //para decodificar caracteres especiales en react
-import {useUserContext} from '../providers/UserProvider';
+import {useLocalStorage} from '@uidotdev/usehooks';
 
 const VideoItem = ({ video }) => {
-  const { theme } = useUserContext();
-
+  const [theme] = useLocalStorage("theme","");
   return (
     <Fragment>
       {video && (

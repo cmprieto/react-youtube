@@ -3,11 +3,13 @@ import { useLocalStorageContext } from "../providers/LocalStorageContext";
 import { useNavigate } from "react-router-dom";
 import lupa from "../assets/icon/buscar.png";
 import { useUserContext } from "../providers/UserProvider";
-
+import LoginButton from "./LoginButton";
+import {useLocalStorage} from '@uidotdev/usehooks';
 
 const Searchbar = () => {
-  const { setTermFromSearchBar,theme } = useUserContext();
-  const { handleSubmitTermLists} = useLocalStorageContext();
+  const { setTermFromSearchBar } = useUserContext();
+  const [theme] = useLocalStorage("theme","");
+  const { handleSubmitTermLists } = useLocalStorageContext();
   const [busqueda, setBusqueda] = useState();
   const navigate = useNavigate();
 
@@ -18,7 +20,7 @@ const Searchbar = () => {
   const handleSubmit = (e) => {
     handleSubmitTermLists(busqueda); //MECANISMOS CONTROL
     setTermFromSearchBar(busqueda);
-    navigate("/react-youtube/videodetail/"); 
+    navigate("/react-youtube/videodetail/");
     e.preventDefault();
   };
 
@@ -41,7 +43,7 @@ const Searchbar = () => {
           <img src={lupa} alt="lupa" className="searchButton--lupa" />
         </button>
       </form>
-
+      <LoginButton />
     </div>
   );
 };
