@@ -26,22 +26,26 @@
 
                 &--hidden {
                     display: none;
-                    &--light{
+
+                    &--light {
                         display: none;
                     }
                 }
             }
-            &--separador{
+
+            &--separador {
                 display: none;
             }
-            &--icon{
+
+            &--icon {
                 display: none;
             }
         }
     }
+
     .searchbar {
         margin: 0.5rem 0rem;
-        width: 90%;
+        width: 100%;
         max-width: 536px;
 
         &--form {
@@ -49,6 +53,10 @@
                 font-size: 0.9rem;
             }
         }
+    }
+
+    .loginButton--noAuth {
+        margin-left: 1rem;
     }
 
     .videodetail {
@@ -137,8 +145,9 @@
             max-width: 100px;
         }
     }
-    .profile{
-        grid-area:main;
+
+    .profile {
+        grid-area: main;
         width: 300px;
         height: 300px;
     }

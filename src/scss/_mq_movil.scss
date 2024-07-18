@@ -2,7 +2,7 @@
     .container {
         min-height: 100vh;
         grid-template-columns: 180px 1fr 1fr;
-        grid-template-rows: 125px 60px 80% auto 40px;
+        grid-template-rows: 125px 100px 80% auto 40px;
         grid-template-areas:
             " menu menu menu"
             "searchbar searchbar searchbar"
@@ -50,7 +50,7 @@
     .searchbar {
         //  margin: 0rem 0.5rem ;
         width: 90%;
-        flex-direction: column;
+        flex-direction: column-reverse;
         &--form {
             &>input {
                 font-size: 0.9rem;
