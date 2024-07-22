@@ -57,7 +57,12 @@
             }
         }
     }
-
+    .loginButtonisAuth {
+        margin:0.5rem;
+    }
+    .loginButton--noAuth {
+        margin:0.5rem;
+    }
     .videodetail {
         grid-template-rows: 500px;
         height: auto;

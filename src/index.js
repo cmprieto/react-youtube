@@ -11,7 +11,10 @@ root.render(
     clientId="z2xE2xzSOyvOogMfsBDVAE9MoPIXSW37"
     authorizationParams={{
       redirect_uri: window.location.origin + "/react-youtube/",
+      audience: "https://dev-850jr4fzp1pse6qo.eu.auth0.com/api/v2/",   
+     scope: "read:current_user update:current_user_metadata",
     }}
+    
   >
       <App />
    

@@ -5,11 +5,9 @@ import ThemeMode from './ThemeMode';
 import {useLocalStorage} from '@uidotdev/usehooks';
 
 const NavBar = () => {
-  const { i,setI } = useUserContext();
+  const { handleKey } = useUserContext();
   const [theme] = useLocalStorage("theme","");
-  const handleKey = () => {
-    i < 2 ? setI((prevState) => prevState + 1) : setI(0);
-  };
+
 
   return (
     <div className={`navbar${theme}`}>

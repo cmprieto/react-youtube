@@ -5,11 +5,9 @@ import upWhite from "../assets/icon/top_white.png";
 import {useLocalStorage} from '@uidotdev/usehooks';
 
 const BottomMenu = () => {
-  const { i, setI } = useUserContext();
+  const { handleKey } = useUserContext();
   const [theme] = useLocalStorage("theme","");
-  const handleKey = () => {
-    i < 2 ? setI((prevState) => prevState + 1) : setI(0);
-  };
+
 
   const handleUp = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

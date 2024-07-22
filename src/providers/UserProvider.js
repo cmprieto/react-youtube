@@ -12,10 +12,19 @@ const UserProvider = ({ children }) => {
   const [favorito, setFavorito] = useLocalStorage("favoritos-youtube", []);
   const [channel, setChannel] = useState();
   const [listChannel, setListChannel] = useState();
-  const [page, setPage] = useState("CAUQAA");
-  const [channelInformation, setChannelInformation] = useState();
-  const [i, setI] = useState(0);
 
+  const [channelInformation, setChannelInformation] = useState();
+  const [indexApi, setIndexApi] = useState(0);
+  const [token, setToken] = useState("");
+  //handle pg busqueda
+  const [handlePage, setHandlePage] = useState("");
+  const [nextPage, setNextPage] = useState("");
+  const [prevPage, setPrevPage] = useState("");
+
+  //handle pg channel favorito
+  const [handleChannelPage, setHandleChannelPage] = useState("");
+  const [nextChPage, setNextChPage] = useState("");
+  const [prevChPage, setPrevChPage] = useState("");
   // HELPERS
 
   //REVISA LISTADO DE VIDEOS FAVORITOS SE ENCUENTRAN EN LOCALSTORAGE
@@ -32,6 +41,14 @@ const UserProvider = ({ children }) => {
     console.log("addIsFavoriteToAPI", addIsFavoriteToAPI);
     setDataYoutube(addIsFavoriteToAPI);
   };
+
+
+  const handleKey = () => {
+    indexApi < 2 ? setIndexApi((prevState) => prevState + 1) : setIndexApi(0);
+  };
+
+
+
 
   useEffect(() => {
     setDataYoutube();
@@ -51,14 +68,26 @@ const UserProvider = ({ children }) => {
         setChannel,
         listChannel,
         setListChannel,
-        page,
-        setPage,
+        handlePage,
+        setHandlePage,
         channelInformation,
         setChannelInformation,
-        i,
-        setI,
+        indexApi,
+        setIndexApi,
         getRecommended,
-        setGetRecommended
+        setGetRecommended,
+        token,
+        setToken,
+        nextPage,
+        setNextPage,
+        prevPage,
+        setPrevPage,
+        handleChannelPage,
+        setHandleChannelPage,
+        nextChPage,
+        setNextChPage,
+        prevChPage,
+        setPrevChPage,handleKey
       }}
     >
       {children}

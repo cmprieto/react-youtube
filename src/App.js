@@ -6,17 +6,19 @@ import GetRecommended from "./services/GetRecommended";
 import GetChannels from "./services/GetChannels";
 import GetChannelInformation from "./services/GetChannelInformation";
 import LocalStorageContext from "./providers/LocalStorageContext";
+import GetPlaylists from "./services/GetPlaylists";
 
 
 const App = () => {
   return (
     <UserProvider>
       <LocalStorageContext>
-      <GetRecommended />
+ {/*      <GetRecommended /> */}
         <GetYoutube />
         <GetChannelInformation />
         <GetChannels />
-        <Router />
+     {/*    <GetPlaylists/>
+ */}        <Router />
       </LocalStorageContext>
     </UserProvider>
   );
