@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# React-YouTube
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React-YouTube Screenshot](./public/docs/screenshot_Youtube.png){:width="500px" }
+## Introducción
 
-## Available Scripts
+Explicación más detallada sobre el proyecto, su motivación y los problemas que intenta resolver.  
 
-In the project directory, you can run:
+## Descripción del proyecto
 
-### `npm start`
+React-Youtube es una aplicación web creada con React que emula las funcionalidades básicas de YouTube. Permite a los usuarios buscar videos, ver detalles de los videos, guardarlos como favoritos y reproducirlos. Este proyecto tiene como objetivo practicar y demostrar habilidades en React, integración con APIs y diseño de interfaces de usuario.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Características
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Buscar videos utilizando la API de YouTube.   
+        `<link>` : https://developers.google.com/youtube/v3/docs?hl=es  
+         Referencia de API de YouTube:  
+         `<link>` :https://developers.google.com/youtube/v3/docs  
+         Ejemplos de llamadas API de Youtube:  
+         `<link>` :https://developers.google.com/youtube/v3/sample_requests  
 
-### `npm test`
+- Mostrar una lista de videos basados en los términos de búsqueda.
+- Reproducir videos dentro de la aplicación.
+- Mostrar detalles del video, incluyendo título, descripción y vistas.
+- Guardar videos favoritos y mostrarlos en una lista.
+- Visualizar detalles de un determinado channel de youtube y ver sus videos.
+- Listado de los últimos channels visitados.
+- Diseño responsive para dispositivos móviles y de escritorio.
+- Dark mode.
+- Uso de Skeletons para hacer más amigable la experiencia de usuario.
+- Botón "Key Changer" para cambiar la API de Youtube si se excede su cuota de uso, entre 3 API's configuradas.
+- Icono para hacer 'scroll on top' cada vez que sea necesario.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologías Utilizadas
 
-### `npm run build`
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **React Router**: Para la navegación entre diferentes páginas de la aplicación.
+- **React Context**: Para pasar datos a través del árbol de componentes sin tener que pasar props manualmente en cada nivel.
+- **LocalStorage Context**:  combina el uso de React Context con LocalStorage del navegador para crear métodos y gestionar el almacenamiento local del navegador.
+- **Axios**: Cliente HTTP para realizar solicitudes a la API de YouTube.
+- **API de YouTube**: Para obtener datos y videos.
+- **Auth0**: Configuración y uso para realizar un Login con Google, extraer la información general de la cuenta y crear rutas protegidas.
+- **Protected Route** Confuguración para crear rutas protegidas, acceso si se produce la autentificación.
+- **SASS en React,** **Grid, Flexbox,** **CSS3** y **HTML5**: Para el diseño y estructura de la aplicación.
+- **React Skeleton**: Para crear un efecto de carga de datos en la aplicación.
+- **BEM**: metodología de nomenclatura y estructura de código CSS. Ayuda a reutilizar estilos, facilita el mantenimiento y hace que los estilos sean más escalables en proyectos web.  
+- **React Helmet Async**: Para implementar SEO y Opengraph.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// FALSO
+- **React Icons**: Para agregar iconos a la aplicación.
+- **React Toastify**: Para mostrar mensajes de éxito y error en la aplicación.
+- **React Hook Form**: Para crear formularios en React.
+- **React Hook Form Resolvers**: Para validar formularios en React.
+- **React Hook Form Validation**: Para validar formularios en React.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Estructura de archivos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+react-youtube/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── app/
+│   │   ├── Router.js
+│   │   └── ProtectedRoute.js
+│   ├── components/
+│   │   ├── VideoDetail.js
+│   │   ├── VideoList.js
+│   │   ├── VideoItem.js
+│   │   └── ...
+│   ├── pages/
+│   │   ├── HomePage.js
+│   │   ├── History.js
+│   │   └── ...
+│   ├── App.js
+│   ├── index.js
+│   ├── services/
+│   │   └── GeYoutube.js
+│   ├── scss/
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   └── ...
+│   │   └── main.scss
+│   │   └── ...
+│   └── ...
+├── .env
+├── package.json
+└── README.md
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Uso 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Buscar Videos:
+      Utiliza la barra de búsqueda para ingresar términos de búsqueda.
+      La aplicación mostrará una lista de videos relacionados con el término de búsqueda.
+- Reproducir Videos: 
+      Haz clic en un video de la lista para ver los detalles y reproducir el video.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Agregar un video como favorito:
+      Haz clic en el botón de favorito para agregar un video a la lista de favoritos.
+- Visualizar todos los videos favoritos como una lista.
+- Revisar las últimas 10 búsquedas realizadas en la página, con posibilidad de recarga.
+- Visualizar los canales a los que pertenecen los videos mostrados. 
+- Revisar los últimos canales buscados y ver los videos de dicho canal.  
+`![React-YouTube Screenshot](./public/docs/screenshot.png){: width="500px" }`

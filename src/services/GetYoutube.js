@@ -34,7 +34,7 @@ const GetYoutube = () => {
           .get("https://www.googleapis.com/youtube/v3/search?", {
             params: {
               part: "snippet",
-              maxResults: 15,
+              maxResults: 10,
               q: termFromSearchBar,
               key: key[indexApi],
               pageToken: handlePage,
