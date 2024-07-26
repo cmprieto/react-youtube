@@ -1,6 +1,6 @@
 # React-YouTube
 
-![React-YouTube Screenshot](./public/docs/screenshot_Youtube.png){:width="500px" }
+![React-YouTube Screenshot](./public/docs/screenshot_Youtube.png)
 ## Introducción
 
 Explicación más detallada sobre el proyecto, su motivación y los problemas que intenta resolver.  
@@ -103,4 +103,4 @@ react-youtube/
 - Revisar las últimas 10 búsquedas realizadas en la página, con posibilidad de recarga.
 - Visualizar los canales a los que pertenecen los videos mostrados. 
 - Revisar los últimos canales buscados y ver los videos de dicho canal.  
-`![React-YouTube Screenshot](./public/docs/screenshot.png){: width="500px" }`
+`![React-YouTube Screenshot](./public/docs/screenshot.png)

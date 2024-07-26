@@ -20,6 +20,7 @@ const SEO = ({ title, description, name, type, keywords, image }) => {
       {/* End Facebook tags */}
       {/* Twitter tags */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="cmprieto.github.io/react-youtube/"/>
       <meta
         property="twitter:url"
         content="https://cmprieto.github.io/react-youtube/"

@@ -8,7 +8,7 @@
  // overflow-y: scroll;
   display: grid;
   grid-template-columns: 190px 1fr 1fr 1fr;
-  grid-template-rows: 0.1fr 3fr 3fr 3fr 3fr 4fr;
+  grid-template-rows: 0.1fr 3fr 3fr 3fr 3fr 0.5fr;
   grid-template-areas:
     "menu searchbar searchbar searchbar"
     "menu main main main"

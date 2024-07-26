@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  height: 60%; //CAMBIO DE LAYOUT A FLEX EN container--videodetail
+  height: 60vh; //CAMBIO DE LAYOUT A FLEX EN container--videodetail
   width: 100%; //CAMBIO DE LAYOUT A FLEX EN container--videodetail
 
   &--light {
@@ -21,9 +21,9 @@
     height: auto;
     object-fit: cover;
     /*   position: relative; */
-    /*          aspect-ratio: 16 / 9;
+    /*   aspect-ratio: 16 / 9;
          background-color: #f26565; */
-    /*       padding-top: 56.25%; */
+    /*   padding-top: 56.25%; */
     @include d-flex(flex-start, center);
     flex-direction: column;
 

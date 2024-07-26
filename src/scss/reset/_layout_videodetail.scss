@@ -3,6 +3,7 @@
    /*  overflow-y: scroll;
     scroll-behavior: smooth; */
     @include flex-center;
-    flex-wrap: wrap;
+    flex-direction: column;
+   // flex-wrap: wrap;
     margin:1rem;
 }
