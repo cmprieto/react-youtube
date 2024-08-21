@@ -1,9 +1,6 @@
 # React-YouTube
 
 ![React-YouTube Screenshot](./public/docs/screenshot_Youtube.png)
-## Introducción
-
-Explicación más detallada sobre el proyecto, su motivación y los problemas que intenta resolver.  
 
 ## Descripción del proyecto
 
@@ -44,13 +41,6 @@ React-Youtube es una aplicación web creada con React que emula las funcionalida
 - **React Skeleton**: Para crear un efecto de carga de datos en la aplicación.
 - **BEM**: metodología de nomenclatura y estructura de código CSS. Ayuda a reutilizar estilos, facilita el mantenimiento y hace que los estilos sean más escalables en proyectos web.  
 - **React Helmet Async**: Para implementar SEO y Opengraph.
-
-// FALSO
-- **React Icons**: Para agregar iconos a la aplicación.
-- **React Toastify**: Para mostrar mensajes de éxito y error en la aplicación.
-- **React Hook Form**: Para crear formularios en React.
-- **React Hook Form Resolvers**: Para validar formularios en React.
-- **React Hook Form Validation**: Para validar formularios en React.
 
 ## Estructura de archivos
 
